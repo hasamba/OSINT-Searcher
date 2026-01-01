@@ -38,7 +38,7 @@ SIDEBAR_ITEMS = [
     ("Sandbox.html", "Sandbox"),
     ("GoogleShodan_Dorks.html", "Google/Shodan Dorks"),
     ("URLIP_Scan.html", "URL/IP Scan"),
-    ("Social_Serch.html", "Social Serch"),
+    ("Social_Search.html", "Social Search"),
     ("Courses.html", "Courses"),
     ("OSINT_Frameworks.html", "OSINT Frameworks"),
     ("Username_OSINT.html", "Username OSINT"),
@@ -53,13 +53,6 @@ SIDEBAR_ITEMS = [
     ("Faces.html", "Faces"),
     ("Geolocation.html", "Geolocation"),
     ("Search_Engines.html", "Search Engines"),
-    ("Forensic_Blog_Feed.html", "Forensic Blog Feed"),
-    ("Email_Osint_Workflow.html", "Email Osint Workflow"),
-    ("Name_OSINT_Workflow.html", "Name OSINT Workflow"),
-    ("Username_OSINT_Flowchart.html", "Username OSINT Flowchart"),
-    ("Domain_OSINT_Flowchart.html", "Domain OSINT Flowchart"),
-    ("Phone_OSINT_Workflow.html", "Phone OSINT Workflow"),
-    ("Location_Osint_Workfllow.html", "Location Osint Workfllow"),
 ]
 
 ALL_TOOLS = []
