@@ -24,6 +24,7 @@
         </div>
         <ul class="nav-links">
             <li><a href="Search.html">Search Engines</a></li>
+            <li><a href="Tor_Search.html">Tor Search</a></li>
             <li><a href="Email.html">Email Addresses</a></li>
             <li><a href="Name.html">Names</a></li>
             <li><a href="Username.html">Usernames</a></li>
@@ -366,6 +367,22 @@
             urls.forEach(url => {
                 window.open(url, '_blank');
             });
+        }
+    </script>
+            
+
+    <script>
+        function openAllStartMe() {
+            const urls = ["https://osint-tool.com/", "https://intelx.io/tools?tab=domain", "https://web-check.as93.net/", "https://builtwith.com/", "https://centralops.net/co/", "https://dnslytics.com/reverse-ip", "https://spyonweb.com/", "https://visualping.io/", "https://viewdns.info/", "https://urldna.io/", "https://pentest-tools.com/information-gathering/find-subdomains-of-domain", "https://crt.sh/", "https://web.archive.org/", "https://www.virustotal.com/gui/home/upload", "https://www.shodan.io/", "http://moonsearch.com/", "https://www.criminalip.io/", "https://threatcrowd.org/", "https://leakix.net/", "https://fullhunt.io/", "https://www.cyber-xray.com/#/search", "https://falcon.crowdstrike.com/intelligence-v2/recon", "https://whois.domaintools.com/", "https://mxtoolbox.com/", "https://who.is/", "https://dehashed.com/", "https://app.netlas.io/host/", "https://leakcheck.io/", "https://app.binaryedge.io/services/query", "https://pulsedive.com/", "https://search.censys.io/", "https://en.fofa.info/", "https://dnsdumpster.com/", "https://osint.sh/"];
+            let i = 0;
+            function openNext() {
+                if (i < urls.length) {
+                    window.open(urls[i], '_blank');
+                    i++;
+                    setTimeout(openNext, 250); // Small delay to prevent browser blocking
+                }
+            }
+            openNext();
         }
     </script>
             

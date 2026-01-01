@@ -7,6 +7,7 @@ TARGET_DIR = r"c:/Users/yaniv/10Root Dropbox/Yaniv Radunsky/Documents/50-59 Proj
 
 SIDEBAR_ITEMS = [
     ("Search.html", "Search Engines"),
+    ("Tor_Search.html", "Tor Search"),
     ("Email.html", "Email Addresses"),
     ("Name.html", "Names"),
     ("Username.html", "Usernames"),

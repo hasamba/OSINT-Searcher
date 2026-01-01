@@ -24,6 +24,7 @@
         </div>
         <ul class="nav-links">
             <li><a href="Search.html">Search Engines</a></li>
+            <li><a href="Tor_Search.html">Tor Search</a></li>
             <li><a href="Email.html">Email Addresses</a></li>
             <li><a href="Name.html">Names</a></li>
             <li><a href="Username.html">Usernames</a></li>
@@ -142,6 +143,22 @@
             urls.forEach(url => {
                 window.open(url, '_blank');
             });
+        }
+    </script>
+            
+
+    <script>
+        function openAllStartMe() {
+            const urls = ["https://falcon.crowdstrike.com/intelligence/sandbox", "https://tria.ge/", "https://cuckoo.cert.ee/dashboard/", "https://any.run/", "https://www.joesandbox.com/#windows", "https://opentip.kaspersky.com/#search/"];
+            let i = 0;
+            function openNext() {
+                if (i < urls.length) {
+                    window.open(urls[i], '_blank');
+                    i++;
+                    setTimeout(openNext, 250); // Small delay to prevent browser blocking
+                }
+            }
+            openNext();
         }
     </script>
             
