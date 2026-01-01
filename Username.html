@@ -1,0 +1,433 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IntelTechniques Username Tool</title>
+    <link rel="stylesheet" href="Files/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="app-container">
+        <!-- Sidebar -->
+        <nav class="sidebar">
+        <div class="sidebar-header">
+            <h2>OSINT Searcher</h2>
+        </div>
+        <ul class="nav-links">
+            <li><a href="Search.html">Search Engines</a></li>
+            <li><a href="Facebook.html">Facebook</a></li>
+            <li><a href="Twitter.html">X (Twitter)</a></li>
+            <li><a href="Instagram.html">Instagram</a></li>
+            <li><a href="LinkedIn.html">LinkedIn</a></li>
+            <li><a href="Communities.html">Communities</a></li>
+            <li><a href="Email.html">Email Addresses</a></li>
+            <li><a href="Username.html" class="active">Usernames</a></li>
+            <li><a href="Name.html">Names</a></li>
+            <li><a href="Address.html">Addresses</a></li>
+            <li><a href="Telephone.html">Telephone Numbers</a></li>
+            <li><a href="Location.html">Maps</a></li>
+            <li><a href="Documents.html">Documents</a></li>
+            <li><a href="Pastes.html">Pastes</a></li>
+            <li><a href="Images.html">Images</a></li>
+            <li><a href="Videos.html">Videos</a></li>
+            <li><a href="Domain.html">Domains</a></li>
+            <li><a href="IP.html">IP Addresses</a></li>
+            <li><a href="Business.html">Business & Gov</a></li>
+            <li><a href="Vehicle.html">Vehicles</a></li>
+            <li><a href="Currencies.html">Virtual Currencies</a></li>
+            <li><a href="Breaches.html">Data Breaches</a></li>
+            <li><a href="Radio.html">Live Audio</a></li>
+            <li><a href="Video.html">Live Video</a></li>
+            <li><a href="API.html">APIs</a></li>
+            <li><a href="License.html">License</a></li>
+        </ul>
+    </nav>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="main-header">
+                <h1>Username Search Tools</h1>
+            </div>
+
+            <div class="mb-4">
+                <script type="text/javascript">
+                    function doPopAll(PopAll) {
+                        var pop = document.getElementById("PopAll");
+                        for (j = 1; j <= 100; j++) {
+                            if (j < 10) { j = "0" + j.toString(); } else { j = j.toString(); }
+                            console.log(j)
+                            item = document.getElementById("Search" + j);
+                            if (item != null) { item.value = pop.value; }
+                        }
+                    }
+                </script>
+                <div class="tool-card">
+                    <form onsubmit="doPopAll(this.PopAll.value); return false;" class="tool-form"
+                        style="flex-direction: row; align-items: center;">
+                        <input type="text" id="PopAll" name="PopAll" placeholder="Enter Username to Populate All Fields"
+                            style="flex: 1;" />
+                        <input type="submit" value="Populate All" style="width: auto;" />
+                    </form>
+                </div>
+            </div>
+
+            <div class="tools-grid">
+                <!-- Google -->
+                <div class="tool-card">
+                    <script type="text/javascript">
+                        function doSearch01(Search01) { window.open('https://www.google.com/search?q=%22' + Search01 + '%22', 'Search01window'); }
+                    </script>
+                    <form onsubmit="doSearch01(this.Search01.value); return false;" class="tool-form">
+                        <input type="text" id="Search01" name="Search01" placeholder="Username" value="" />
+                        <input type="submit" value="Google" />
+                    </form>
+                </div>
+
+                <!-- Bing -->
+                <div class="tool-card">
+                    <script type="text/javascript">
+                        function doSearch02(Search02) { window.open('https://www.bing.com/search?q=%22' + Search02 + '%22', 'Search02window'); }
+                    </script>
+                    <form onsubmit="doSearch02(this.Search02.value); return false;" class="tool-form">
+                        <input type="text" id="Search02" name="Search02" placeholder="Username" value="" />
+                        <input type="submit" value="Bing" />
+                    </form>
+                </div>
+
+                <!-- Yandex -->
+                <div class="tool-card">
+                    <script type="text/javascript">
+                        function doSearch03(Search03) { window.open('https://yandex.com/search/?text="' + Search03 + '"', 'Search03window'); }
+                    </script>
+                    <form onsubmit="doSearch03(this.Search03.value); return false;" class="tool-form">
+                        <input type="text" id="Search03" name="Search03" placeholder="Username" value="" />
+                        <input type="submit" value="Yandex" />
+                    </form>
+                </div>
+
+                <!-- ID Crawl -->
+                <div class="tool-card">
+                    <script type="text/javascript">
+                        function doSearch04(Search04) { window.open('https://www.idcrawl.com/u/' + Search04, 'Search04window'); }
+                    </script>
+                    <form onsubmit="doSearch04(this.Search04.value); return false;" class="tool-form">
+                        <input type="text" id="Search04" name="Search04" placeholder="Username" value="" />
+                        <input type="submit" value="ID Crawl" />
+                    </form>
+                </div>
+
+                <!-- InstantUsername -->
+                <div class="tool-card">
+                    <script type="text/javascript">
+                        function doSearch05(Search05) { window.open('https://instantusername.com/?q=' + Search05, 'Search05window'); }
+                    </script>
+                    <form onsubmit="doSearch05(this.Search05.value); return false;" class="tool-form">
+                        <input type="text" id="Search05" name="Search05" placeholder="Username" value="" />
+                        <input type="submit" value="InstantUsername" />
+                    </form>
+                </div>
+
+                <!-- NameChecker -->
+                <div class="tool-card">
+                    <script type="text/javascript">
+                        function doSearch09(Search09) { window.open('https://www.namechecker.org/#' + Search09, 'Search09window'); }
+                    </script>
+                    <form onsubmit="doSearch09(this.Search09.value); return false;" class="tool-form">
+                        <input type="text" id="Search09" name="Search09" placeholder="Username" />
+                        <input type="submit" value="NameChecker" />
+                    </form>
+                </div>
+
+                <!-- NameChck -->
+                <div class="tool-card">
+                    <script type="text/javascript">
+                        function doSearch26(Search26) { window.open('https://namechk.com/namechk-plugin-search-results/?n=' + Search26, 'Search26window'); }
+                    </script>
+                    <form onsubmit="doSearch26(this.Search26.value); return false;" class="tool-form">
+                        <input type="text" id="Search26" name="Search26" placeholder="Username" />
+                        <input type="submit" value="NameChck" />
+                    </form>
+                </div>
+
+                <!-- NameVine -->
+                <div class="tool-card">
+                    <script type="text/javascript">
+                        function doSearch07(Search07) { window.open('https://namevine.com/#/' + Search07, 'Search07window'); }
+                    </script>
+                    <form onsubmit="doSearch07(this.Search07.value); return false;" class="tool-form">
+                        <input type="text" id="Search07" name="Search07" placeholder="Username" value="" />
+                        <input type="submit" value="NameVine" />
+                    </form>
+                </div>
+
+                <!-- ProfileDiscover -->
+                <div class="tool-card">
+                    <script type="text/javascript">
+                        function doSearch27(Search27) { window.open('https://profilediscover.com/' + Search27, 'Search27window'); }
+                    </script>
+                    <form onsubmit="doSearch27(this.Search27.value); return false;" class="tool-form">
+                        <input type="text" id="Search27" name="Search27" placeholder="Username" />
+                        <input type="submit" value="ProfileDiscover" />
+                    </form>
+                </div>
+
+                <!-- SocialSearcher -->
+                <div class="tool-card">
+                    <script type="text/javascript">
+                        function doSearch08(Search08) { window.open('https://www.social-searcher.com/search-users/?ntw=&q6=' + Search08, 'Search08window'); }
+                    </script>
+                    <form onsubmit="doSearch08(this.Search08.value); return false;" class="tool-form">
+                        <input type="text" id="Search08" name="Search08" placeholder="Username" value="" />
+                        <input type="submit" value="SocialSearcher" />
+                    </form>
+                </div>
+
+                <!-- Checkistan -->
+                <div class="tool-card">
+                    <script type="text/javascript">
+                        function doSearch28(Search28) { window.open('https://usernamechecker.checkistan.com/#' + Search28, 'Search28window'); }
+                    </script>
+                    <form onsubmit="doSearch28(this.Search28.value); return false;" class="tool-form">
+                        <input type="text" id="Search28" name="Search28" placeholder="Username" />
+                        <input type="submit" value="Checkistan" />
+                    </form>
+                </div>
+
+                <!-- UserSearch -->
+                <div class="tool-card">
+                    <script type="text/javascript">
+                        function doSearch06(Search06) {
+                            window.open('https://usersearch.org/results_normal.php?URL_username=' + Search06, 'Search06awindow');
+                            window.open('https://usersearch.org/results_advanced.php?URL_username=' + Search06, 'Search06bwindow');
+                            window.open('https://usersearch.org/results_advanced1.php?URL_username=' + Search06, 'Search06cwindow');
+                            window.open('https://usersearch.org/results_advanced2.php?URL_username=' + Search06, 'Search06dwindow');
+                            window.open('https://usersearch.org/results_advanced4.php?URL_username=' + Search06, 'Search06ewindow');
+                            window.open('https://usersearch.org/results_advanced5.php?URL_username=' + Search06, 'Search06fwindow');
+                            window.open('https://usersearch.org/results_advanced6.php?URL_username=' + Search06, 'Search06gwindow');
+                            window.open('https://usersearch.org/results_advanced7.php?URL_username=' + Search06, 'Search06hwindow');
+                            window.open('https://usersearch.org/results_dating.php?URL_username=' + Search06, 'Search06iwindow');
+                            window.open('https://usersearch.org/results_forums.php?URL_username=' + Search06, 'Search06jwindow');
+                            window.open('https://usersearch.org/results_crypto.php?URL_username=' + Search06, 'Search06kwindow');
+                        }
+                    </script>
+                    <form onsubmit="doSearch06(this.Search06.value); return false;" class="tool-form">
+                        <input type="text" id="Search06" name="all" placeholder="Username" value="" />
+                        <input type="submit" value="UserSearch" />
+                    </form>
+                </div>
+
+                <!-- Dehashed -->
+                <div class="tool-card">
+                    <script type="text/javascript">
+                        function doSearch10(Search10) { window.open('https://dehashed.com/search?query="' + Search10 + '"', 'Search10window'); }
+                    </script>
+                    <form onsubmit="doSearch10(this.Search10.value); return false;" class="tool-form">
+                        <input type="text" id="Search10" name="Search10" placeholder="Username" value="" />
+                        <input type="submit" value="Dehashed" />
+                    </form>
+                </div>
+
+                <!-- PSBDMP -->
+                <div class="tool-card">
+                    <script type="text/javascript">
+                        function doSearch11(Search11) { window.open('https://psbdmp.ws/api/search/' + Search11, 'Search11window'); }
+                    </script>
+                    <form onsubmit="doSearch11(this.Search11.value); return false;" class="tool-form">
+                        <input type="text" id="Search11" name="Search11" placeholder="Username" value="" />
+                        <input type="submit" value="PSBDMP" />
+                    </form>
+                </div>
+
+                <!-- Gravatar -->
+                <div class="tool-card">
+                    <script type="text/javascript">
+                        function doSearch12(Search12) { window.open('https://en.gravatar.com/' + Search12, 'Search12window'); }
+                    </script>
+                    <form onsubmit="doSearch12(this.Search12.value); return false;" class="tool-form">
+                        <input type="text" id="Search12" name="Search12" placeholder="Username" value="" />
+                        <input type="submit" value="Gravatar" />
+                    </form>
+                </div>
+
+                <!-- LinkTree -->
+                <div class="tool-card">
+                    <script type="text/javascript">
+                        function doSearch13(Search13) { window.open('https://linktr.ee/' + Search13, 'Search13window'); }
+                    </script>
+                    <form onsubmit="doSearch13(this.Search13.value); return false;" class="tool-form">
+                        <input type="text" id="Search13" name="Search13" placeholder="Username" value="" />
+                        <input type="submit" value="LinkTree" />
+                    </form>
+                </div>
+
+                <!-- X (Twitter) -->
+                <div class="tool-card">
+                    <script type="text/javascript">
+                        function doSearch15(Search15) { window.open('http://x.com/' + Search15, 'Search15window'); }
+                    </script>
+                    <form onsubmit="doSearch15(this.Search15.value); return false;" class="tool-form">
+                        <input type="text" id="Search15" name="Search15" placeholder="Username" value="" />
+                        <input type="submit" value="X (Twitter)" />
+                    </form>
+                </div>
+
+                <!-- Facebook -->
+                <div class="tool-card">
+                    <script type="text/javascript">
+                        function doSearch16(Search16) { window.open('https://facebook.com/' + Search16, 'Search16window'); }
+                    </script>
+                    <form onsubmit="doSearch16(this.Search16.value); return false;" class="tool-form">
+                        <input type="text" id="Search16" name="Search16" placeholder="Username" value="" />
+                        <input type="submit" value="Facebook" />
+                    </form>
+                </div>
+
+                <!-- Instagram -->
+                <div class="tool-card">
+                    <script type="text/javascript">
+                        function doSearch17(Search17) { window.open('http://instagram.com/' + Search17, 'Search17window'); }
+                    </script>
+                    <form onsubmit="doSearch17(this.Search17.value); return false;" class="tool-form">
+                        <input type="text" id="Search17" name="Search17" placeholder="Username" value="" />
+                        <input type="submit" value="Instagram" />
+                    </form>
+                </div>
+
+                <!-- TikTok -->
+                <div class="tool-card">
+                    <script type="text/javascript">
+                        function doSearch18(Search18) { window.open('https://www.tiktok.com/@' + Search18, 'Search18window'); }
+                    </script>
+                    <form onsubmit="doSearch18(this.Search18.value); return false;" class="tool-form">
+                        <input type="text" id="Search18" name="Search18" placeholder="Username" value="" />
+                        <input type="submit" value="TikTok" />
+                    </form>
+                </div>
+
+                <!-- Tinder -->
+                <div class="tool-card">
+                    <script type="text/javascript">
+                        function doSearch19(Search19) { window.open('https://tinder.com/@' + Search19, 'Search19window'); }
+                    </script>
+                    <form onsubmit="doSearch19(this.Search19.value); return false;" class="tool-form">
+                        <input type="text" id="Search19" name="Search19" placeholder="Username" value="" />
+                        <input type="submit" value="Tinder" />
+                    </form>
+                </div>
+
+                <!-- Tumblr -->
+                <div class="tool-card">
+                    <script type="text/javascript">
+                        function doSearch20(Search20) { window.open('https://' + Search20 + '.tumblr.com', 'Search20window'); }
+                    </script>
+                    <form onsubmit="doSearch20(this.Search20.value); return false;" class="tool-form">
+                        <input type="text" id="Search20" name="Search20" placeholder="Username" value="" />
+                        <input type="submit" value="Tumblr" />
+                    </form>
+                </div>
+
+                <!-- Snapchat -->
+                <div class="tool-card">
+                    <script type="text/javascript">
+                        function doSearch21(Search21) { window.open('https://www.snapchat.com/s/' + Search21, 'Search21window'); }
+                    </script>
+                    <form onsubmit="doSearch21(this.Search21.value); return false;" class="tool-form">
+                        <input type="text" id="Search21" name="Search21" placeholder="Username" value="" />
+                        <input type="submit" value="Snapchat" />
+                    </form>
+                </div>
+
+                <!-- Medium -->
+                <div class="tool-card">
+                    <script type="text/javascript">
+                        function doSearch22(Search22) { window.open('https://medium.com/@' + Search22, 'Search22window'); }
+                    </script>
+                    <form onsubmit="doSearch22(this.Search22.value); return false;" class="tool-form">
+                        <input type="text" id="Search22" name="Search22" placeholder="Username" value="" />
+                        <input type="submit" value="Medium" />
+                    </form>
+                </div>
+
+                <!-- YouTube -->
+                <div class="tool-card">
+                    <script type="text/javascript">
+                        function doSearch23(Search23) { window.open('http://youtube.com/' + Search23, 'Search23window'); }
+                    </script>
+                    <form onsubmit="doSearch23(this.Search23.value); return false;" class="tool-form">
+                        <input type="text" id="Search23" name="Search23" placeholder="Username" value="" />
+                        <input type="submit" value="YouTube" />
+                    </form>
+                </div>
+
+                <!-- Reddit -->
+                <div class="tool-card">
+                    <script type="text/javascript">
+                        function doSearch24(Search24) { window.open('https://www.reddit.com/user/' + Search24, 'Search24window'); }
+                    </script>
+                    <form onsubmit="doSearch24(this.Search24.value); return false;" class="tool-form">
+                        <input type="text" id="Search24" name="Search24" placeholder="Username" value="" />
+                        <input type="submit" value="Reddit" />
+                    </form>
+                </div>
+
+                <!-- Ghunt -->
+                <div class="tool-card">
+                    <script type="text/javascript">
+                        function doSearch29(Search29) { window.open('https://gmail-osint.activetk.jp/' + Search29, 'Search98window'); }
+                    </script>
+                    <form onsubmit="doSearch29(this.Search29.value); return false;" class="tool-form">
+                        <input type="text" id="Search29" name="Search29" placeholder="Username" />
+                        <input type="submit" value="Ghunt" />
+                    </form>
+                </div>
+
+                <!-- Dehashed Emails -->
+                <div class="tool-card">
+                    <script type="text/javascript">
+                        function doall3(all3) {
+                            setTimeout(function () { window.open('https://dehashed.com/search?query=%22' + all3 + '@gmail.com%22', '1leak3window'); }, 1000);
+                            setTimeout(function () { window.open('https://dehashed.com/search?query=%22' + all3 + '@yahoo.com%22', '2leak3window'); }, 3000);
+                            setTimeout(function () { window.open('https://dehashed.com/search?query=%22' + all3 + '@hotmail.com%22', '3leak3window'); }, 6000);
+                            setTimeout(function () { window.open('https://dehashed.com/search?query=%22' + all3 + '@protonmail.com%22', '4leak3window'); }, 9000);
+                            setTimeout(function () { window.open('https://dehashed.com/search?query=%22' + all3 + '@live.com%22', '5leak3window'); }, 12000);
+                            setTimeout(function () { window.open('https://dehashed.com/search?query=%22' + all3 + '@outlook.com%22', '6leak3window'); }, 15000);
+                            setTimeout(function () { window.open('https://dehashed.com/search?query=%22' + all3 + '@icloud.com%22', '7leak3window'); }, 18000);
+                            setTimeout(function () { window.open('https://dehashed.com/search?query=%22' + all3 + '@yandex.com%22', '8leak3window'); }, 21000);
+                            setTimeout(function () { window.open('https://dehashed.com/search?query=%22' + all3 + '@gmx.com%22', '9leak3window'); }, 23000);
+                            setTimeout(function () { window.open('https://dehashed.com/search?query=%22' + all3 + '@mail.com%22', '10leak3window'); }, 26000);
+                            setTimeout(function () { window.open('https://dehashed.com/search?query=%22' + all3 + '@mac.com%22', '11leak3window'); }, 29000);
+                            setTimeout(function () { window.open('https://dehashed.com/search?query=%22' + all3 + '@me.com%22', '12leak3window'); }, 32000);
+                        }
+                    </script>
+                    <form onsubmit="doall3(this.all3.value); return false;" class="tool-form">
+                        <input type="text" name="all3" id="Search92" placeholder="Username" value="" />
+                        <input type="submit" value="Dehashed Emails" />
+                    </form>
+                </div>
+
+                <!-- Email Search -->
+                <div class="tool-card">
+                    <script type="text/javascript">
+                        function doSearch25(Search25) {
+                            window.open('https://www.google.com/search?q=%22' + Search25 + '@gmail.com%22OR%22' + Search25 + '@yahoo.com%22OR%22' + Search25 + '@hotmail.com%22OR%22' + Search25 + '@protonmail.com%22OR%22' + Search25 + '@live.com%22OR%22' + Search25 + '@icloud.com%22OR%22' + Search25 + '@yandex.com%22OR%22' + Search25 + '@gmx.com%22OR%22' + Search25 + '@mail.com%22OR%22' + Search25 + '@mac.com%22OR%22' + Search25 + '@me.com%22', 'Search25window');
+                        }
+                    </script>
+                    <form onsubmit="doSearch25(this.Search25.value); return false;" class="tool-form">
+                        <input type="text" name="Search25" id="Search25" placeholder="Username" />
+                        <input type="submit" value="Email Search" />
+                    </form>
+                </div>
+
+            </div> <!-- End Tools Grid -->
+        </main>
+    </div>
+
+</body>
+
+</html>
