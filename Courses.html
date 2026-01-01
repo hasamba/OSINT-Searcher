@@ -256,5 +256,21 @@
         }
     </script>
             
+
+    <script>
+        function openAllStartMe() {
+            const urls = ["https://www.google.com/search?q=site%3Adrive.google.com+powershell", "https://drive.google.com/file/d/1BOAj0_VUYxuj6Se76EHPKhudPsNSf5HZ/view?usp=drivesdk", "https://www.kgay4all.com/seioqueseiporleroqueleio/", "https://www.coursedl.org/0:/", "https://www.eyedex.org/", "https://filepursuit.com/", "https://odcrawler.xyz/", "https://opendirsearch.abifog.com/", "https://serbianforum.org/forums/video-tutorijali.341/", "https://tut4it.com/", "https://tut4sec.com/", "https://cybersecurityleaks.com/home"];
+            let i = 0;
+            function openNext() {
+                if (i < urls.length) {
+                    window.open(urls[i], '_blank');
+                    i++;
+                    setTimeout(openNext, 250); // Small delay to prevent browser blocking
+                }
+            }
+            openNext();
+        }
+    </script>
+            
 </body>
 </html>

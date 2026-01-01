@@ -119,16 +119,41 @@
                     </form>
                 </div>
 
+                <div class="tool-card">
+                    <script type="text/javascript">
+                        function doStartMeSearch4() { window.open('https://github.com/InQuest/awesome-yara?tab=readme-ov-file#rules', '_blank'); }
+                    </script>
+                    <form class="tool-form" onsubmit="doStartMeSearch4(); return false;">
+                        <input type="submit" value="Awesome YARA Rules" style="width: 100%; white-space: normal;" />
+                    </form>
+                </div>
+
             </div>
         </main>
     </div>
 
-<script src="Files/search_data.js"></script>
-<script src="Files/search.js"></script>
+    <script src="Files/search_data.js"></script>
+    <script src="Files/search.js"></script>
 
     <script>
         function openAllStartMe() {
             const urls = ["https://detectionstream.com/yara", "https://detectionstream.com/sigma", "https://elastic.github.io/detection-rules-explorer/", "https://rulezet.org/"];
+            let i = 0;
+            function openNext() {
+                if (i < urls.length) {
+                    window.open(urls[i], '_blank');
+                    i++;
+                    setTimeout(openNext, 250); // Small delay to prevent browser blocking
+                }
+            }
+            openNext();
+        }
+    </script>
+
+
+    <script>
+        function openAllStartMe() {
+            const urls = ["https://detectionstream.com/yara", "https://detectionstream.com/sigma", "https://elastic.github.io/detection-rules-explorer/", "https://rulezet.org/", "https://github.com/InQuest/awesome-yara?tab=readme-ov-file#rules"];
             let i = 0;
             function openNext() {
                 if (i < urls.length) {
