@@ -80,7 +80,7 @@
         <!-- Main Content -->
         <main class="main-content">
             <div class="main-header">
-                <h1>Videos</h1>
+                <h1>Videos<button onclick="openAllTools()" class="btn-open-all">Open All</button></h1>
             </div>
             <div class="tools-grid">
                 <div class="tool-card">
@@ -416,6 +416,22 @@
 
 <script src="Files/search_data.js"></script>
 <script src="Files/search.js"></script>
+
+    <script>
+        function openAllTools() {
+            const urls = ["https://www.nsfwyoutube.com/watch?v=", "https://www.youtube.com/embed/", "https://i.ytimg.com/vi/", "https://img.youtube.com/vi/", "https://img.youtube.com/vi/", "https://img.youtube.com/vi/", "https://www.google.com/searchbyimage?site=search&sa=X&image_url=https://i.ytimg.com/vi/", "https://www.bing.com/images/search?view=detailv2&iss=sbi&q=imgurl:https://i.ytimg.com/vi/", "https://yandex.com/images/search?rpt=imageview&url=https://i.ytimg.com/vi/", "http://www.tineye.com/search/?url=https://i.ytimg.com/vi/", "http://polsy.org.uk/stuff/ytrestrict.cgi?ytid=", "https://watannetwork.com/tools/blocked/#url=", "https://www.googleapis.com/youtube/v3/videos?id=", "http://www.pwnyoutube.com/watch?v=", "https://web.archive.org/web/https://www.youtube.com/watch?v=", "https://www.google.com/search?tbm=vid&q=", "https://www.bing.com/videos/search?q=", "https://yandex.ru/video/search?text=", "https://www.youtube.com/results?search_query=", "https://twitter.com/search?q=", "https://www.facebook.com/search/videos/?q=", "https://www.reddit.com/search?q=site:v.redd.it%20AND%20", "https://www.tiktok.com/tag/", "https://archive.org/details/movies?tab=collection&query=", "https://archive.org/details/opensource_movies?tab=collection&query=", "https://archive.org/details/tv?q=", "https://www.google.com/searchbyimage?site=search&sa=X&image_url=http://i.ytimg.com/vi/", "https://www.google.com/searchbyimage?site=search&sa=X&image_url=http://i.ytimg.com/vi/", "https://www.google.com/searchbyimage?site=search&sa=X&image_url=http://i.ytimg.com/vi/", "https://www.google.com/searchbyimage?site=search&sa=X&image_url=http://i.ytimg.com/vi/", "http://www.tineye.com/search/?url=http://i.ytimg.com/vi/", "http://www.tineye.com/search/?url=http://i.ytimg.com/vi/", "http://www.tineye.com/search/?url=http://i.ytimg.com/vi/", "http://www.tineye.com/search/?url=http://i.ytimg.com/vi/", "https://yandex.com/images/search?source=collections&&url=http://i.ytimg.com/vi/", "https://yandex.com/images/search?source=collections&&url=http://i.ytimg.com/vi/", "https://yandex.com/images/search?source=collections&&url=http://i.ytimg.com/vi/", "https://yandex.com/images/search?source=collections&&url=http://i.ytimg.com/vi/", "http://www.bing.com/images/searchbyimage?FORM=IRSBIQ&cbir=sbi&imgurl=http://i.ytimg.com/vi/", "http://www.bing.com/images/searchbyimage?FORM=IRSBIQ&cbir=sbi&imgurl=http://i.ytimg.com/vi/", "http://www.bing.com/images/searchbyimage?FORM=IRSBIQ&cbir=sbi&imgurl=http://i.ytimg.com/vi/", "http://www.bing.com/images/searchbyimage?FORM=IRSBIQ&cbir=sbi&imgurl=http://i.ytimg.com/vi/", "https://www.google.com/searchbyimage?site=search&sa=X&image_url=https://i.vimeocdn.com/video/", "http://www.tineye.com/search/?url=https://i.vimeocdn.com/video/", "https://www.yandex.com/images/search?img_url=https://i.vimeocdn.com/video/", "http://www.bing.com/images/searchbyimage?FORM=IRSBIQ&cbir=sbi&imgurl=https://i.vimeocdn.com/video/", "https://www.google.com/searchbyimage?site=search&sa=X&image_url=", "http://www.bing.com/images/searchbyimage?FORM=IRSBIQ&cbir=sbi&imgurl=", "http://www.tineye.com/search/?url=", "https://yandex.com/images/search?url=", "https://image.baidu.com/pcdutu?queryImageUrl=", "https://www.youtube.com/user/", "https://www.youtube.com/feeds/videos.xml?user=", "https://youtube.googleapis.com/youtube/v3/channels?part=snippet&id=", "https://www.googleapis.com/youtube/v3/commentThreads?part=id,snippet&videoId="];
+            let i = 0;
+            function openNext() {
+                if (i < urls.length) {
+                    window.open(urls[i], '_blank');
+                    i++;
+                    setTimeout(openNext, 250);
+                }
+            }
+            openNext();
+        }
+    </script>
+                
 </body>
 
 </html>

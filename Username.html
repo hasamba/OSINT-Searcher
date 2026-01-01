@@ -80,7 +80,7 @@
         <!-- Main Content -->
         <main class="main-content">
             <div class="main-header">
-                <h1>Username</h1>
+                <h1>Username<button onclick="openAllTools()" class="btn-open-all">Open All</button></h1>
             </div>
 
             <div class="mb-4">
@@ -491,6 +491,22 @@
 
 <script src="Files/search_data.js"></script>
 <script src="Files/search.js"></script>
+
+    <script>
+        function openAllTools() {
+            const urls = ["https://www.google.com/search?q=%22", "https://www.bing.com/search?q=%22", "https://yandex.com/search/?text=\"", "https://www.idcrawl.com/u/", "https://instantusername.com/?q=", "https://www.namechecker.org/#", "https://namechk.com/namechk-plugin-search-results/?n=", "https://namevine.com/#/", "https://profilediscover.com/", "https://www.social-searcher.com/search-users/?ntw=&q6=", "https://usernamechecker.checkistan.com/#", "https://usersearch.org/results_normal.php?URL_username=", "https://usersearch.org/results_advanced.php?URL_username=", "https://usersearch.org/results_advanced1.php?URL_username=", "https://usersearch.org/results_advanced2.php?URL_username=", "https://usersearch.org/results_advanced4.php?URL_username=", "https://usersearch.org/results_advanced5.php?URL_username=", "https://usersearch.org/results_advanced6.php?URL_username=", "https://usersearch.org/results_advanced7.php?URL_username=", "https://usersearch.org/results_dating.php?URL_username=", "https://usersearch.org/results_forums.php?URL_username=", "https://usersearch.org/results_crypto.php?URL_username=", "https://dehashed.com/search?query=\"", "https://psbdmp.ws/api/search/", "https://en.gravatar.com/", "https://linktr.ee/", "http://x.com/", "https://facebook.com/", "http://instagram.com/", "https://www.tiktok.com/@", "https://tinder.com/@", "https://", "https://www.snapchat.com/s/", "https://medium.com/@", "http://youtube.com/", "https://www.reddit.com/user/", "https://gmail-osint.activetk.jp/", "https://dehashed.com/search?query=%22", "https://dehashed.com/search?query=%22", "https://dehashed.com/search?query=%22", "https://dehashed.com/search?query=%22", "https://dehashed.com/search?query=%22", "https://dehashed.com/search?query=%22", "https://dehashed.com/search?query=%22", "https://dehashed.com/search?query=%22", "https://dehashed.com/search?query=%22", "https://dehashed.com/search?query=%22", "https://dehashed.com/search?query=%22", "https://dehashed.com/search?query=%22", "https://www.google.com/search?q=%22", "https://whatsmyname.app/?q=", "https://github.com/sherlock-project/sherlock", "https://web.telegram.org/k/#@osint_maigret_bot"];
+            let i = 0;
+            function openNext() {
+                if (i < urls.length) {
+                    window.open(urls[i], '_blank');
+                    i++;
+                    setTimeout(openNext, 250);
+                }
+            }
+            openNext();
+        }
+    </script>
+                
 </body>
 
 </html>

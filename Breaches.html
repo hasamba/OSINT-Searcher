@@ -78,7 +78,7 @@
     <!-- Main Content -->
     <main class="main-content">
         <div class="main-header">
-            <h1>Breaches</h1>
+            <h1>Breaches<button onclick="openAllTools()" class="btn-open-all">Open All</button></h1>
         </div>
         <div class="tools-grid">
             <div class="tool-card">
@@ -411,5 +411,21 @@ function doSearch36(Search36)
 
 <script src="Files/search_data.js"></script>
 <script src="Files/search.js"></script>
+
+    <script>
+        function openAllTools() {
+            const urls = ["https://haveibeenpwned.com/unifiedsearch/", "https://dehashed.com/search?query=\"", "https://intelx.io/?s=", "https://psbdmp.ws/api/search/", "https://check.cybernews.com/chk/?lang=en_US&e=", "https://portal.spycloud.com/endpoint/enriched-stats/", "https://cavalier.hudsonrock.com/api/json/v2/preview/search-by-login/osint-tools?email=", "https://haveibeenpwned.com/unifiedsearch/", "https://dehashed.com/search?query=\"", "https://psbdmp.ws/api/search/", "https://dehashed.com/search?query=\"", "https://psbdmp.ws/api/search/", "https://intelx.io/?s=", "https://www.hudsonrock.com/search?domain=", "https://dehashed.com/search?query=", "https://psbdmp.ws/api/search/", "https://dehashed.com/search?query=", "https://psbdmp.ws/api/search/", "https://intelx.io/?s=", "https://dehashed.com/search?query=", "https://psbdmp.ws/api/search/", "https://dehashed.com/search?query=", "https://psbdmp.ws/api/search/", "https://www.google.com/search?q=", "https://decrypt.tools/client-server/decrypt?type=md5&string=", "https://decrypt.tools/client-server/decrypt?type=sha1&string=", "https://md5.gromweb.com/?md5=", "https://sha1.gromweb.com/?hash=", "https://www.nitrxgen.net/md5db/", "https://www.shodan.io/search?query=product%3Aelastic+port%3A9200+", "http://", "http://", "http://", "https://btdig.com/search?order=0&q="];
+            let i = 0;
+            function openNext() {
+                if (i < urls.length) {
+                    window.open(urls[i], '_blank');
+                    i++;
+                    setTimeout(openNext, 250);
+                }
+            }
+            openNext();
+        }
+    </script>
+                
 </body>
 </html>

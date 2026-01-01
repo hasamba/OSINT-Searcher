@@ -78,7 +78,7 @@
     <!-- Main Content -->
     <main class="main-content">
         <div class="main-header">
-            <h1>Vehicle Search</h1>
+            <h1>Vehicle Search<button onclick="openAllTools()" class="btn-open-all">Open All</button></h1>
         </div>
         <div class="tools-grid">
             <div class="tool-card">
@@ -201,5 +201,21 @@ function doSearch13(Search13)
 
 <script src="Files/search_data.js"></script>
 <script src="Files/search.js"></script>
+
+    <script>
+        function openAllTools() {
+            const urls = ["https://www.carvana.com/sell-my-car/getoffer/vehicle?licensePlate=", "https://www.searchquarry.com/vehicle_records/lregister?sqtb=license_plate&license_plates=", "https://recordsfinder.com/search/plate/loader/?flow=plate&plateNumber=", "https://infotracer.com/loading/?type=plate-lookup&mercSubId=plate&plate=", "https://www.vindecoderz.com/EN/check-lookup/", "https://www.faxvin.com/order/decoding?vin=", "https://checkthatvin.com/ctv/#/vin-search/", "https://vincheck.info/check/report-summary.php?vin=", "https://www.searchquarry.com/vin-decoder/search/", "https://www.cyclevin.com/vin-report/?vin=", "https://recordsfinder.com/search/vin-check/loader/?flow=vin-check&vin=", "https://csps.con.rcmp-grc.gc.ca/queryVehicles?vin="];
+            let i = 0;
+            function openNext() {
+                if (i < urls.length) {
+                    window.open(urls[i], '_blank');
+                    i++;
+                    setTimeout(openNext, 250);
+                }
+            }
+            openNext();
+        }
+    </script>
+                
 </body>
 </html>

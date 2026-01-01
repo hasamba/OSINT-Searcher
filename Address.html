@@ -78,7 +78,7 @@
     <!-- Main Content -->
     <main class="main-content">
         <div class="main-header">
-            <h1>Address Search</h1>
+            <h1>Address Search<button onclick="openAllTools()" class="btn-open-all">Open All</button></h1>
         </div>
         <div class="tools-grid">
             <div class="tool-card">
@@ -379,5 +379,21 @@ function doSearch19(Search19a, Search19b, Search19c, Search19d, Search19e)
 
 <script src="Files/search_data.js"></script>
 <script src="Files/search.js"></script>
+
+    <script>
+        function openAllTools() {
+            const urls = ["https://services.gisgraphy.com/geocoding/geocode?address=", "https://www.zillow.com/homes/", "https://rehold.com/", "https://www.google.com/search?q=", "https://www.cyberbackgroundchecks.com/address/", "https://hudwayglass.com/house/", "https://www.searchpeoplefree.com/address/", "https://www.spokeo.com/", "https://www.advancedbackgroundchecks.com/address/", "https://www.truepeoplesearch.com/resultaddress?streetaddress=", "https://www.fastpeoplesearch.com/address/", "https://nuwber.com/address/", "https://www.peoplesearchnow.com/address/", "https://www.whitepages.com/address/", "https://www.smartbackgroundchecks.com/address-search/", "https://www.peoplesearchnow.com/address/", "https://www.usa-people-search.com/address/", "https://www.peoplefinders.com/people/search/address?address=", "https://www.addresses.com/addr/"];
+            let i = 0;
+            function openNext() {
+                if (i < urls.length) {
+                    window.open(urls[i], '_blank');
+                    i++;
+                    setTimeout(openNext, 250);
+                }
+            }
+            openNext();
+        }
+    </script>
+                
 </body>
 </html>

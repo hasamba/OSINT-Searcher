@@ -109,6 +109,10 @@ function doPopAll(First3, Mid3, Last4){
 <input type="text" name="Search00c" id="Search00c" size="5" placeholder="1212" />
 <input type="submit"  value="Populate All" /></form>
             </div></div>
+            <div><button onclick="openAllTools()" class="btn-open-all">Open All</button></div>
+            </div>
+<div class="full-width-tool" style="margin-bottom: 20px; display: flex; gap: 10px; align-items: center;">
+            <div style="flex-grow: 1;"></div>
             <div></div>
             </div>
 <div class="full-width-tool" style="margin-bottom: 20px;"></div>
@@ -519,5 +523,40 @@ setTimeout(function(){window.open('http://www.oldphonebook.com/searchphone2.php?
 
 <script src="Files/search_data.js"></script>
 <script src="Files/search.js"></script>
+
+    <script>
+        function openAllTools() {
+            // Get the PopAll value if possible
+            const popInput = document.getElementById('PopAll');
+            const term = popInput ? popInput.value : '';
+            
+            // If Populate All exists, we might want to ensure fields are populated first?
+            // The doPopAll function takes the value and iterates IDs.
+            // We can just call doPopAll(term) to be safe before opening, 
+            // BUT doPopAll is specific to the page variables usually.
+            // Assuming the user might have typed but not clicked "Populate".
+            
+            if (typeof doPopAll === 'function' && term) {
+                doPopAll(term);
+            }
+
+            const forms = Array.from(document.querySelectorAll('form.tool-form'));
+            // Filter out the Populate All form itself (check onsubmit text or value)
+            const contentForms = forms.filter(f => !f.innerHTML.includes('value="Populate All"'));
+            
+            let i = 0;
+            function openNext() {
+                if (i < contentForms.length) {
+                    // Trigger submit
+                    // We use dispatchEvent to ensure onsubmit handler runs
+                    contentForms[i].dispatchEvent(new Event('submit', { cancelable: true }));
+                    i++;
+                    setTimeout(openNext, 250); // Delay
+                }
+            }
+            openNext();
+        }
+    </script>
+            
 </body>
 </html>

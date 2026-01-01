@@ -142,75 +142,112 @@ def process_file(filename):
         if "Files/search_data.js" not in new_content:
             new_content = new_content.replace('</body>', '<script src="Files/search_data.js"></script>\n<script src="Files/search.js"></script>\n</body>')
 
-        # --- StartMe Detection for Modernized Files ---
-        # We need to scan new_content for doStartMeSearch
-        url_matches = re.findall(r"window\.open\('([^']+)'", new_content)
-        is_startme_page = "doStartMeSearch" in new_content
+        # --- Open All / Populate All Logic ---
+        
+        # Check for Populate All
+        pop_all_pattern = re.compile(r'(<div class="tool-card">\s*<script[^>]*>.*?doPopAll.*?</script>.*?<form.*?value="Populate All".*?</form>\s*</div>)', re.DOTALL | re.IGNORECASE)
+        pop_match = pop_all_pattern.search(new_content)
+        has_pop_all = bool(pop_match)
         
         open_all_btn = ""
         open_all_script = ""
-
-        if is_startme_page and url_matches:
-             # Create JS array
-            js_urls = json.dumps(url_matches)
-            open_all_script = f"""
+        
+        if has_pop_all:
+            # --- Strategy A: Search Page (Iterate Forms) ---
+            # We assume pages with Populate All rely on forms.
+            # We generate a script that triggers all form submits.
+            
+            open_all_script = """
     <script>
-        function openAllStartMe() {{
+        function openAllTools() {
+            // Get the PopAll value if possible
+            const popInput = document.getElementById('PopAll');
+            const term = popInput ? popInput.value : '';
+            
+            // If Populate All exists, we might want to ensure fields are populated first?
+            // The doPopAll function takes the value and iterates IDs.
+            // We can just call doPopAll(term) to be safe before opening, 
+            // BUT doPopAll is specific to the page variables usually.
+            // Assuming the user might have typed but not clicked "Populate".
+            
+            if (typeof doPopAll === 'function' && term) {
+                doPopAll(term);
+            }
+
+            const forms = Array.from(document.querySelectorAll('form.tool-form'));
+            // Filter out the Populate All form itself (check onsubmit text or value)
+            const contentForms = forms.filter(f => !f.innerHTML.includes('value="Populate All"'));
+            
+            let i = 0;
+            function openNext() {
+                if (i < contentForms.length) {
+                    // Trigger submit
+                    // We use dispatchEvent to ensure onsubmit handler runs
+                    contentForms[i].dispatchEvent(new Event('submit', { cancelable: true }));
+                    i++;
+                    setTimeout(openNext, 250); // Delay
+                }
+            }
+            openNext();
+        }
+    </script>
+            """
+            open_all_btn = '<button onclick="openAllTools()" class="btn-open-all">Open All</button>'
+            
+        else:
+            # --- Strategy B: Static/StartMe Page (Iterate URLs from Regex) ---
+            url_matches = re.findall(r"window\.open\('([^']+)'", new_content)
+            
+            # Filter matches to avoid junk?
+            # StartMe pages usually have full URLs.
+            
+            if url_matches:
+                js_urls = json.dumps(url_matches)
+                open_all_script = f"""
+    <script>
+        function openAllTools() {{
             const urls = {js_urls};
             let i = 0;
             function openNext() {{
                 if (i < urls.length) {{
                     window.open(urls[i], '_blank');
                     i++;
-                    setTimeout(openNext, 250); // Small delay to prevent browser blocking
+                    setTimeout(openNext, 250);
                 }}
             }}
             openNext();
         }}
     </script>
-            """
-            open_all_btn = '<button onclick="openAllStartMe()" class="btn-open-all">Open All</button>'
-            
-            # Remove existing button if we are re-processing to avoid dupes or logic conflicts
-            if 'class="btn-open-all"' in new_content:
-                new_content = re.sub(r'<button.*?class="btn-open-all".*?</button>', '', new_content)
-                # Remove existing script
-                new_content = re.sub(r'<script>\s*function openAllStartMe.*?<\/script>', '', new_content, flags=re.DOTALL)
+                """
+                open_all_btn = '<button onclick="openAllTools()" class="btn-open-all">Open All</button>'
+
+        # --- Clean up previous injections ---
+        if 'class="btn-open-all"' in new_content:
+             new_content = re.sub(r'<button.*?class="btn-open-all".*?</button>', '', new_content)
+        if 'function openAllStartMe' in new_content:
+             new_content = re.sub(r'<script>\s*function openAllStartMe.*?<\/script>', '', new_content, flags=re.DOTALL)
 
 
-        # --- Move "Populate All" to Top ---
-        # Look for the card containing "Populate All"
+        # --- Injection ---
         
-        pop_all_pattern = re.compile(r'(<div class="tool-card">\s*<script[^>]*>.*?doPopAll.*?</script>.*?<form.*?value="Populate All".*?</form>\s*</div>)', re.DOTALL | re.IGNORECASE)
-        pop_match = pop_all_pattern.search(new_content)
-        
-        if pop_match:
-            pop_card = pop_match.group(1)
-            # Remove from original location
-            new_content = new_content.replace(pop_card, "")
-            
-            # Insert after Main Header
-            # We want to insert it in a full-width container
-            # If open_all_btn exists, we add it here!
-            
-            controls_html = f'''<div class="full-width-tool" style="margin-bottom: 20px; display: flex; gap: 10px; align-items: center;">
+        if has_pop_all:
+             # Move Populate All and append Open All
+             pop_card = pop_match.group(1)
+             new_content = new_content.replace(pop_card, "")
+             
+             controls_html = f'''<div class="full-width-tool" style="margin-bottom: 20px; display: flex; gap: 10px; align-items: center;">
             <div style="flex-grow: 1;">{pop_card}</div>
             <div>{open_all_btn}</div>
             </div>'''
-            
-            # If we used the button here, clear it so it doesn't go to H1
-            open_all_btn = "" 
-            
-            new_content = re.sub(r'(<div class="main-header">.*?</div>)', f'\\1\n{controls_html}', new_content, flags=re.DOTALL)
-            print(f"Moved Populate All for {filename}")
-        
-        # --- Final Injection ---
-        
-        # Inject Button into H1 (Fallback if not used in Populate All container)
-        if open_all_btn:
-             new_content = new_content.replace(f'<h1>{clean_title_h1}</h1>', f'<h1>{clean_title_h1}{open_all_btn}</h1>')
-            
-        # Inject Script before body end
+             
+             new_content = re.sub(r'(<div class="main-header">.*?</div>)', f'\\1\n{controls_html}', new_content, flags=re.DOTALL)
+             print(f"Added PopAll+OpenAll for {filename}")
+             
+        elif open_all_btn:
+            # In Header
+            new_content = new_content.replace(f'<h1>{clean_title_h1}</h1>', f'<h1>{clean_title_h1}{open_all_btn}</h1>')
+            print(f"Added OpenAll to Header for {filename}")
+
         if open_all_script:
             new_content = new_content.replace('</body>', f'{open_all_script}\n</body>')
 
