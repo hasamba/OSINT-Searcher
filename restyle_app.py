@@ -1,6 +1,7 @@
 
 import os
 import re
+import json
 
 TARGET_DIR = r"c:/Users/yaniv/10Root Dropbox/Yaniv Radunsky/Documents/50-59 Projects/58 Gemini/58.01_OSINT-Searcher"
 
@@ -274,7 +275,7 @@ def main():
                  process_file(f)
 
     # Write Index JS
-    index_js = "const SITE_TOOLS = " + str(ALL_TOOLS).replace("'", '"') + ";"
+    index_js = "const SITE_TOOLS = " + json.dumps(ALL_TOOLS) + ";"
     with open(os.path.join(TARGET_DIR, "Files/search_data.js"), 'w', encoding='utf-8') as f:
         f.write(index_js)
     print(f"Generated search index with {len(ALL_TOOLS)} tools.")
