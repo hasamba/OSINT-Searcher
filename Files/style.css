@@ -308,3 +308,16 @@ input[type="submit"]:active, button:active {
         top: 60px;
     }
 }
+
+/* Highlight Animation */
+.highlight-tool {
+    animation: pulse-highlight 2s ease-in-out;
+    border-color: var(--accent-color);
+    box-shadow: 0 0 15px rgba(0, 122, 255, 0.5);
+}
+
+@keyframes pulse-highlight {
+    0% { background-color: var(--bg-secondary); }
+    50% { background-color: rgba(0, 122, 255, 0.2); }
+    100% { background-color: var(--bg-secondary); }
+}

@@ -2,9 +2,47 @@ document.addEventListener('DOMContentLoaded', function () {
     const searchInput = document.getElementById('global-search');
     const resultsContainer = document.getElementById('search-results');
 
+    // ---------------------------------------------------------
+    // 1. HIGHLIGHT LOGIC (Run on every page load)
+    // ---------------------------------------------------------
+    const urlParams = new URLSearchParams(window.location.search);
+    const highlightTerm = urlParams.get('highlight');
+
+    if (highlightTerm) {
+        // Find the tool card corresponding to the term
+        // We look for input[type="submit"] with value == highlightTerm
+        const toolCards = document.querySelectorAll('.tool-card');
+        for (const card of toolCards) {
+            const submitBtn = card.querySelector('input[type="submit"]');
+
+            // Loose matching: allows part of the name or exact match
+            if (submitBtn && submitBtn.value.toLowerCase().includes(highlightTerm.toLowerCase())) {
+                // Scroll into view
+                card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+                // Add highlight class
+                card.classList.add('highlight-tool');
+
+                // Remove highlight after animation (3s)
+                setTimeout(() => {
+                    card.classList.remove('highlight-tool');
+                }, 3000);
+
+                // Stop after first match to avoid jumping around
+                break;
+            }
+        }
+    }
+
+    // ---------------------------------------------------------
+    // 2. SEARCH BAR LOGIC
+    // ---------------------------------------------------------
+
+    // If search input doesn't exist (some pages might not have sidebar?), skip
+    if (!searchInput) return;
+
     // Ensure SITE_TOOLS is available
     if (typeof SITE_TOOLS === 'undefined') {
-        console.error('SITE_TOOLS index not found.');
         return;
     }
 
@@ -23,7 +61,8 @@ document.addEventListener('DOMContentLoaded', function () {
             resultsContainer.innerHTML = '';
             matches.slice(0, 15).forEach(tool => {
                 const item = document.createElement('a');
-                item.href = tool.url;
+                // Append ?highlight=ToolName to the URL
+                item.href = `${tool.url}?highlight=${encodeURIComponent(tool.name)}`;
                 item.className = 'search-result-item';
                 item.innerHTML = `<strong>${tool.name}</strong> <span>in ${tool.category}</span>`;
                 resultsContainer.appendChild(item);

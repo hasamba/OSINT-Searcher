@@ -53,6 +53,13 @@ SIDEBAR_ITEMS = [
     ("Faces.html", "Faces"),
     ("Geolocation.html", "Geolocation"),
     ("Search_Engines.html", "Search Engines"),
+    ("Forensic_Blog_Feed.html", "Forensic Blog Feed"),
+    ("Email_Osint_Workflow.html", "Email Osint Workflow"),
+    ("Name_OSINT_Workflow.html", "Name OSINT Workflow"),
+    ("Username_OSINT_Flowchart.html", "Username OSINT Flowchart"),
+    ("Domain_OSINT_Flowchart.html", "Domain OSINT Flowchart"),
+    ("Phone_OSINT_Workflow.html", "Phone OSINT Workflow"),
+    ("Location_Osint_Workfllow.html", "Location Osint Workfllow"),
 ]
 
 ALL_TOOLS = []
@@ -91,6 +98,10 @@ def process_file(filename):
     # Extract Title
     title_match = re.search(r'<title>(.*?)</title>', content, re.IGNORECASE)
     title = title_match.group(1) if title_match else "OSINT Searcher"
+
+    # Global Clean
+    content = content.replace("IntelTechniques", "")
+    content = content.replace("Michael Bazzell", "")
     
     # Clean Title for Sidebar/Meta
     title = title.replace('IntelTechniques ', '')
@@ -269,8 +280,6 @@ def main():
              if f == "index.html":
                  continue # Handle index separately
              
-             if f == "Username.html":
-                 update_sidebar_only(f)
              else:
                  process_file(f)
 
