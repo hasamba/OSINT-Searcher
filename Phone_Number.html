@@ -74,7 +74,7 @@
     <!-- Main Content -->
     <main class="main-content">
         <div class="main-header">
-            <h1>Phone Number</h1>
+            <h1>Phone Number<button onclick="openAllStartMe()" class="btn-open-all">Open All</button></h1>
         </div>
         <div class="tools-grid">
 
@@ -164,5 +164,15 @@
 
 <script src="Files/search_data.js"></script>
 <script src="Files/search.js"></script>
+
+    <script>
+        function openAllStartMe() {
+            const urls = ["https://inteltechniques.com/tools/Telephone.html", "https://intelx.io/tools?tab=telephone", "https://www.truecaller.com/", "https://sync.me/", "https://www.aware-online.com/en/how-can-i-find-a-google-account-by-phone-number/", "https://epieos.com/", "https://www.numlookup.com/", "https://seon.io/", "https://web.telegram.org/k/#@UniversalSearchRobot", "https://osint.rocks/"];
+            urls.forEach(url => {
+                window.open(url, '_blank');
+            });
+        }
+    </script>
+            
 </body>
 </html>

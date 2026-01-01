@@ -133,6 +133,35 @@ def process_file(filename):
         if "Files/search_data.js" not in new_content:
             new_content = new_content.replace('</body>', '<script src="Files/search_data.js"></script>\n<script src="Files/search.js"></script>\n</body>')
         
+        # --- StartMe Detection for Modernized Files ---
+        # We need to scan new_content for doStartMeSearch
+        url_matches = re.findall(r"window\.open\('([^']+)'", new_content)
+        is_startme_page = "doStartMeSearch" in new_content
+        
+        if is_startme_page and url_matches and 'class="btn-open-all"' not in new_content:
+             # Create JS array
+            js_urls = json.dumps(url_matches)
+            open_all_script = f"""
+    <script>
+        function openAllStartMe() {{
+            const urls = {js_urls};
+            urls.forEach(url => {{
+                window.open(url, '_blank');
+            }});
+        }}
+    </script>
+            """
+            open_all_btn = '<button onclick="openAllStartMe()" class="btn-open-all">Open All</button>'
+            
+            # Inject Button into H1
+            # We already replaced H1 earlier: r'<h1>.*?</h1>' -> <h1>{clean_title_h1}</h1>
+            # So we can just replace <h1>{clean_title_h1}</h1> with <h1>{clean_title_h1}{open_all_btn}</h1>
+            
+            new_content = new_content.replace(f'<h1>{clean_title_h1}</h1>', f'<h1>{clean_title_h1}{open_all_btn}</h1>')
+            
+            # Inject Script before body end
+            new_content = new_content.replace('</body>', f'{open_all_script}\n</body>')
+
         with open(file_path, 'w', encoding='utf-8') as f:
             f.write(new_content)
         return
@@ -212,6 +241,39 @@ def process_file(filename):
             
     flush_grid()
     
+    # Detect StartMe Links for Open All Button
+    startme_urls = []
+    # Regex to find: function doStartMeSearch... { window.open('URL', ... }
+    # We scan the *new_body_content* or the *original parts*? 
+    # Current grid items are built from *parts*.
+    # Let's scan the accumulated new_body_content for simplicity, or scan parts as we go.
+    # Scanning new_body_content is easier as it's already strings.
+    
+    url_matches = re.findall(r"window\.open\('([^']+)'", new_body_content)
+    # Check if they look like StartMe (simple window.open without complex logic usually)
+    # Actually, simpler: if the page contains functions named "doStartMeSearch", we assume all window.open in those cards are targets.
+    # But since we extracted `url_matches` from the generated body, let's filter or just use them if we confirm it's a startme page.
+    
+    is_startme_page = "doStartMeSearch" in new_body_content
+    
+    open_all_btn = ""
+    open_all_script = ""
+    
+    if is_startme_page and url_matches:
+        # Create JS array
+        js_urls = json.dumps(url_matches)
+        open_all_script = f"""
+    <script>
+        function openAllStartMe() {{
+            const urls = {js_urls};
+            urls.forEach(url => {{
+                window.open(url, '_blank');
+            }});
+        }}
+    </script>
+        """
+        open_all_btn = '<button onclick="openAllStartMe()" class="btn-open-all">Open All</button>'
+
     # Headers
     clean_title = title.replace(' Tool', '')
     
@@ -234,12 +296,13 @@ def process_file(filename):
     <!-- Main Content -->
     <main class="main-content">
         <div class="main-header">
-            <h1>{clean_title}</h1>
+            <h1>{clean_title}{open_all_btn}</h1>
         </div>
 {new_body_content}
     </main>
 </div>
 
+{open_all_script}
 <script src="Files/search_data.js"></script>
 <script src="Files/search.js"></script>
 </body>

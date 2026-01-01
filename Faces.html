@@ -74,7 +74,7 @@
     <!-- Main Content -->
     <main class="main-content">
         <div class="main-header">
-            <h1>Faces</h1>
+            <h1>Faces<button onclick="openAllStartMe()" class="btn-open-all">Open All</button></h1>
         </div>
         <div class="tools-grid">
 
@@ -92,5 +92,15 @@
 
 <script src="Files/search_data.js"></script>
 <script src="Files/search.js"></script>
+
+    <script>
+        function openAllStartMe() {
+            const urls = ["https://faceagle.com/"];
+            urls.forEach(url => {
+                window.open(url, '_blank');
+            });
+        }
+    </script>
+            
 </body>
 </html>

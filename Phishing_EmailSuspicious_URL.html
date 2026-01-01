@@ -74,7 +74,7 @@
     <!-- Main Content -->
     <main class="main-content">
         <div class="main-header">
-            <h1>Phishing Email/Suspicious URL</h1>
+            <h1>Phishing Email/Suspicious URL<button onclick="openAllStartMe()" class="btn-open-all">Open All</button></h1>
         </div>
         <div class="tools-grid">
 
@@ -300,5 +300,15 @@
 
 <script src="Files/search_data.js"></script>
 <script src="Files/search.js"></script>
+
+    <script>
+        function openAllStartMe() {
+            const urls = ["https://app.phishtool.com/", "https://www.whatismyip.com/email-header-analyzer/", "https://mxtoolbox.com/EmailHeaders.aspx", "https://www.iptrackeronline.com/email-header-analysis.php", "https://twitter.com/hacktoria/status/1575737778628952069", "https://github.com/keraattin/EmailAnalyzer", "https://urlscan.io/", "https://www.brightcloud.com/tools/url-ip-lookup.php", "https://www.scanmysms.com/en", "https://wa.me/97236444417?text=4", "https://app.any.run/", "https://transparencyreport.google.com/safe-browsing/search", "https://scanurl.net/", "https://www.browserling.com/", "https://safeweb.norton.com/", "https://www.phishtank.com/", "https://www.virustotal.com/gui/home/upload", "https://www.psafe.com/dfndr-lab/", "https://www.urlvoid.com/", "https://sitecheck.sucuri.net/", "https://www.scanurl.me/?lang=en", "https://zulu.zscaler.com/", "https://urlquery.net/", "https://www.ipqualityscore.com/threat-feeds/malicious-url-scanner", "https://easydmarc.com/tools/phishing-url", "https://app.validin.com/detail", "https://hunting.abuse.ch/"];
+            urls.forEach(url => {
+                window.open(url, '_blank');
+            });
+        }
+    </script>
+            
 </body>
 </html>

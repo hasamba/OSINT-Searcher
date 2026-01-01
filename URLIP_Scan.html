@@ -74,7 +74,7 @@
     <!-- Main Content -->
     <main class="main-content">
         <div class="main-header">
-            <h1>URL/IP Scan</h1>
+            <h1>URL/IP Scan<button onclick="openAllStartMe()" class="btn-open-all">Open All</button></h1>
         </div>
         <div class="tools-grid">
 
@@ -436,5 +436,15 @@
 
 <script src="Files/search_data.js"></script>
 <script src="Files/search.js"></script>
+
+    <script>
+        function openAllStartMe() {
+            const urls = ["https://osint-tool.com/", "https://www.virustotal.com/gui/home/search", "https://urlscan.io/", "https://www.toolsvoid.com/url-dump/", "https://web-check.xyz/", "https://www.abuseipdb.com/", "https://www.ipqualityscore.com/", "https://www.talosintelligence.com/", "https://ipinfo.io/", "https://checkphish.ai/", "https://centralops.net/co/", "https://exchange.xforce.ibmcloud.com/", "https://metadefender.opswat.com/", "https://www.threatminer.org/", "https://www.criminalip.io/", "http://cybercrime-tracker.net/", "https://phishtank.org/", "https://openphish.com/index.html", "https://www.ransomware.live/#/", "https://transparencyreport.google.com/safe-browsing/search?hl=en", "https://www.urlvoid.com/", "https://www.scanurl.me/?lang=en", "https://urlquery.net/", "https://zulu.zscaler.com/", "http://www.blocklist.de/en/search.html", "https://s0cm0nkey.github.io/EasyThreat.html", "https://www.getsafeonline.org/checkawebsite/", "https://www.scamalert.sg/", "https://www.scamadviser.com/", "https://otx.alienvault.com/", "https://tria.ge/", "https://threatstop.com/checkip", "https://isitphishing.org/", "https://www.url-analyzer.net/", "https://sitecheck.sucuri.net/", "https://mxtoolbox.com/SuperTool.aspx", "https://securitytrails.com/#search", "https://www.brightcloud.com/tools/url-ip-lookup.php", "http://10.0.0.162/admin/queryads.php", "http://20.123.9.203/dashboard", "https://tenroot-misp.northeurope.cloudapp.azure.com/", "https://viz.greynoise.io/", "https://shadowcrypt.net/", "https://threatbook.io/"];
+            urls.forEach(url => {
+                window.open(url, '_blank');
+            });
+        }
+    </script>
+            
 </body>
 </html>

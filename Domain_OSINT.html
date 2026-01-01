@@ -74,7 +74,7 @@
     <!-- Main Content -->
     <main class="main-content">
         <div class="main-header">
-            <h1>Domain OSINT</h1>
+            <h1>Domain OSINT<button onclick="openAllStartMe()" class="btn-open-all">Open All</button></h1>
         </div>
         <div class="tools-grid">
 
@@ -356,5 +356,15 @@
 
 <script src="Files/search_data.js"></script>
 <script src="Files/search.js"></script>
+
+    <script>
+        function openAllStartMe() {
+            const urls = ["https://osint-tool.com/", "https://intelx.io/tools?tab=domain", "https://web-check.as93.net/", "https://builtwith.com/", "https://centralops.net/co/", "https://dnslytics.com/reverse-ip", "https://spyonweb.com/", "https://visualping.io/", "https://viewdns.info/", "https://urldna.io/", "https://pentest-tools.com/information-gathering/find-subdomains-of-domain", "https://crt.sh/", "https://web.archive.org/", "https://www.virustotal.com/gui/home/upload", "https://www.shodan.io/", "http://moonsearch.com/", "https://www.criminalip.io/", "https://threatcrowd.org/", "https://leakix.net/", "https://fullhunt.io/", "https://www.cyber-xray.com/#/search", "https://falcon.crowdstrike.com/intelligence-v2/recon", "https://whois.domaintools.com/", "https://mxtoolbox.com/", "https://who.is/", "https://dehashed.com/", "https://app.netlas.io/host/", "https://leakcheck.io/", "https://app.binaryedge.io/services/query", "https://pulsedive.com/", "https://search.censys.io/", "https://en.fofa.info/", "https://dnsdumpster.com/", "https://osint.sh/"];
+            urls.forEach(url => {
+                window.open(url, '_blank');
+            });
+        }
+    </script>
+            
 </body>
 </html>

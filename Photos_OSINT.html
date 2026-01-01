@@ -74,7 +74,7 @@
     <!-- Main Content -->
     <main class="main-content">
         <div class="main-header">
-            <h1>Photos OSINT</h1>
+            <h1>Photos OSINT<button onclick="openAllStartMe()" class="btn-open-all">Open All</button></h1>
         </div>
         <div class="tools-grid">
 
@@ -220,5 +220,15 @@
 
 <script src="Files/search_data.js"></script>
 <script src="Files/search.js"></script>
+
+    <script>
+        function openAllStartMe() {
+            const urls = ["https://inteltechniques.com/tools/Images.html", "https://intelx.io/tools?tab=image", "https://www.google.com/imghp", "https://www.reverse-image-search.com/", "https://tineye.com/", "https://yandex.com/images/?rpt=imageview", "https://www.bing.com/images/feed", "https://graph.baidu.com/pcpage/index?tpl_from=pc", "https://www.aware-online.com/en/osint-tools/photo-and-video-tools/", "https://facecheck.id/?s=09", "https://www.numlookup.com/reverse-image-search", "https://lenso.ai/en", "https://chatgpt.com/g/g-brlHi7t2R-geoguessr-gpt", "https://labs.tib.eu/geoestimation/", "https://picarta.ai/", "https://earthkit.app/", "https://geospy.web.app/"];
+            urls.forEach(url => {
+                window.open(url, '_blank');
+            });
+        }
+    </script>
+            
 </body>
 </html>

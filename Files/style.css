@@ -420,3 +420,24 @@ button:active {
         top: 250px;
     }
 }
+/* Open All Button */
+.btn-open-all {
+    background-color: transparent;
+    color: var(--accent-blue);
+    border: 1px solid var(--accent-blue);
+    padding: 8px 16px;
+    margin-left: 20px;
+    cursor: pointer;
+    font-family: var(--font-heading);
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    border-radius: var(--radius-sm);
+}
+
+.btn-open-all:hover {
+    background-color: var(--accent-blue);
+    color: white;
+    box-shadow: 0 0 15px rgba(30, 122, 185, 0.4);
+}

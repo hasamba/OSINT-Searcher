@@ -74,7 +74,7 @@
     <!-- Main Content -->
     <main class="main-content">
         <div class="main-header">
-            <h1>Threat Hunting</h1>
+            <h1>Threat Hunting<button onclick="openAllStartMe()" class="btn-open-all">Open All</button></h1>
         </div>
         <div class="tools-grid">
 
@@ -180,5 +180,15 @@
 
 <script src="Files/search_data.js"></script>
 <script src="Files/search.js"></script>
+
+    <script>
+        function openAllStartMe() {
+            const urls = ["https://www.threatminer.org/", "https://www.virustotal.com/", "https://otx.alienvault.com/preview", "https://www.ransomlook.io/", "https://search.misp-community.org/", "https://docs.google.com/spreadsheets/d/1H9_xaxQHpWaa4O_Son4Gx0YOIzlcBWMsdvePFX68EKU/edit?gid=1864660085#gid=1864660085", "https://cse.google.com/cse?cx=003248445720253387346:turlh5vi4xc", "https://ransomwatch.telemetry.ltd/#/", "https://ransomware.live/map/IL", "https://falcon.crowdstrike.com/intelligence-v2/threat-landscape", "https://opentip.kaspersky.com/", "https://platform.stealthmole.com/cases/31a2db79-2106-11f0-a031-3cecefdf4a0c"];
+            urls.forEach(url => {
+                window.open(url, '_blank');
+            });
+        }
+    </script>
+            
 </body>
 </html>

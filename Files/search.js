@@ -1,4 +1,19 @@
 document.addEventListener('DOMContentLoaded', function () {
+    // --- Sidebar Scroll Persistence ---
+    const sidebar = document.querySelector('.sidebar');
+    if (sidebar) {
+        // Restore scroll position
+        const savedScroll = sessionStorage.getItem('sidebarScroll');
+        if (savedScroll) {
+            sidebar.scrollTop = savedScroll;
+        }
+
+        // Save scroll position on scroll
+        sidebar.addEventListener('scroll', function () {
+            sessionStorage.setItem('sidebarScroll', sidebar.scrollTop);
+        });
+    }
+
     const searchInput = document.getElementById('global-search');
     const resultsContainer = document.getElementById('search-results');
 

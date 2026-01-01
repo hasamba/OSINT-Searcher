@@ -74,7 +74,7 @@
     <!-- Main Content -->
     <main class="main-content">
         <div class="main-header">
-            <h1>Sandbox</h1>
+            <h1>Sandbox<button onclick="openAllStartMe()" class="btn-open-all">Open All</button></h1>
         </div>
         <div class="tools-grid">
 
@@ -132,5 +132,15 @@
 
 <script src="Files/search_data.js"></script>
 <script src="Files/search.js"></script>
+
+    <script>
+        function openAllStartMe() {
+            const urls = ["https://falcon.crowdstrike.com/intelligence/sandbox", "https://tria.ge/", "https://cuckoo.cert.ee/dashboard/", "https://any.run/", "https://www.joesandbox.com/#windows", "https://opentip.kaspersky.com/#search/"];
+            urls.forEach(url => {
+                window.open(url, '_blank');
+            });
+        }
+    </script>
+            
 </body>
 </html>
