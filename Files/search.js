@@ -1,18 +1,30 @@
-document.addEventListener('DOMContentLoaded', function () {
-    // --- Sidebar Scroll Persistence ---
-    const sidebar = document.querySelector('.sidebar');
-    if (sidebar) {
-        // Restore scroll position
-        const savedScroll = sessionStorage.getItem('sidebarScroll');
-        if (savedScroll) {
-            sidebar.scrollTop = savedScroll;
-        }
 
-        // Save scroll position on scroll
-        sidebar.addEventListener('scroll', function () {
-            sessionStorage.setItem('sidebarScroll', sidebar.scrollTop);
-        });
+// --- Sidebar Scroll Persistence (Immediate) ---
+(function () {
+    function restoreSidebar() {
+        const sidebar = document.querySelector('.sidebar');
+        if (sidebar) {
+            const savedScroll = sessionStorage.getItem('sidebarScroll');
+            if (savedScroll) {
+                sidebar.scrollTop = parseInt(savedScroll, 10);
+            }
+            sidebar.addEventListener('scroll', function () {
+                sessionStorage.setItem('sidebarScroll', sidebar.scrollTop);
+            });
+        }
     }
+    // Try immediately (in case DOM is ready or script is at end of body)
+    if (document.readyState !== 'loading') {
+        restoreSidebar();
+    } else {
+        document.addEventListener('DOMContentLoaded', restoreSidebar);
+    }
+})();
+
+document.addEventListener('DOMContentLoaded', function () {
+    // Legacy / Search logic inside DOMContentLoaded
+    // ... we remove the inner sidebar logic here to avoid duplicate listeners if we moved it out
+
 
     const searchInput = document.getElementById('global-search');
     const resultsContainer = document.getElementById('search-results');
