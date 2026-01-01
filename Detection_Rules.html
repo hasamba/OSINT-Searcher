@@ -1,19 +1,21 @@
 <!doctype html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Faces</title>
+    <title>Detection Rules</title>
     <link rel="stylesheet" href="Files/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
-<div class="app-container">
-    <!-- Sidebar -->
-    <nav class="sidebar">
+    <div class="app-container">
+        <!-- Sidebar -->
+        <nav class="sidebar">
         <div class="sidebar-header">
             <h2>OSINT Searcher</h2>
         </div>
@@ -49,7 +51,7 @@
             <li><a href="Phishing_EmailSuspicious_URL.html">Phishing Email/Suspicious URL</a></li>
             <li><a href="PhisingMalware_Analysis.html">Phising/Malware Analysis</a></li>
             <li><a href="Threat_Hunting.html">Threat Hunting</a></li>
-            <li><a href="Detection_Rules.html">Detection Rules</a></li>
+            <li><a href="Detection_Rules.html" class="active">Detection Rules</a></li>
             <li><a href="Hashes_to_Hashes.html">Hashes to Hashes</a></li>
             <li><a href="Malware_Related.html">Malware Related</a></li>
             <li><a href="Sandbox.html">Sandbox</a></li>
@@ -68,94 +70,65 @@
             <li><a href="PasswordLeaks_OSINT.html">Password/Leaks OSINT</a></li>
             <li><a href="Business_OSINT.html">Business OSINT</a></li>
             <li><a href="Phone_Number.html">Phone Number</a></li>
-            <li><a href="Faces.html" class="active">Faces</a></li>
+            <li><a href="Faces.html">Faces</a></li>
             <li><a href="Geolocation.html">Geolocation</a></li>
         </ul>
     </nav>
 
-    <!-- Main Content -->
-    <main class="main-content">
-        <div class="main-header">
-            <h1>Faces<button onclick="openAllStartMe()" class="btn-open-all">Open All</button></h1>
-        </div>
-        <div class="tools-grid">
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="main-header">
+                <h1>Detection Rules<button onclick="openAllStartMe()" class="btn-open-all">Open All</button></h1>
+            </div>
+            <div class="tools-grid">
 
-            <div class="tool-card">
-                <script type="text/javascript">
-                    function doStartMeSearch0() { window.open('https://faceagle.com/', '_blank'); }
-                </script>
-                <form class="tool-form" onsubmit="doStartMeSearch0(); return false;">
-                    <input type="submit" value="Faceagle| Face search engine" style="width: 100%; white-space: normal;" />
-                </form>
-            </div>        </div>
+                <div class="tool-card">
+                    <script type="text/javascript">
+                        function doStartMeSearch0() { window.open('https://detectionstream.com/yara', '_blank'); }
+                    </script>
+                    <form class="tool-form" onsubmit="doStartMeSearch0(); return false;">
+                        <input type="submit" value="Detection Stream Yara" style="width: 100%; white-space: normal;" />
+                    </form>
+                </div>
 
-    </main>
-</div>
+                <div class="tool-card">
+                    <script type="text/javascript">
+                        function doStartMeSearch1() { window.open('https://detectionstream.com/sigma', '_blank'); }
+                    </script>
+                    <form class="tool-form" onsubmit="doStartMeSearch1(); return false;">
+                        <input type="submit" value="Detection Stream Sigma" style="width: 100%; white-space: normal;" />
+                    </form>
+                </div>
+
+                <div class="tool-card">
+                    <script type="text/javascript">
+                        function doStartMeSearch2() { window.open('https://elastic.github.io/detection-rules-explorer/', '_blank'); }
+                    </script>
+                    <form class="tool-form" onsubmit="doStartMeSearch2(); return false;">
+                        <input type="submit" value="Elastic Detection Rules Explorer"
+                            style="width: 100%; white-space: normal;" />
+                    </form>
+                </div>
+
+                <div class="tool-card">
+                    <script type="text/javascript">
+                        function doStartMeSearch3() { window.open('https://rulezet.org/', '_blank'); }
+                    </script>
+                    <form class="tool-form" onsubmit="doStartMeSearch3(); return false;">
+                        <input type="submit" value="RuleZet" style="width: 100%; white-space: normal;" />
+                    </form>
+                </div>
+
+            </div>
+        </main>
+    </div>
 
 <script src="Files/search_data.js"></script>
 <script src="Files/search.js"></script>
 
     <script>
         function openAllStartMe() {
-            const urls = ["https://faceagle.com/"];
-            urls.forEach(url => {
-                window.open(url, '_blank');
-            });
-        }
-    </script>
-            
-
-    <script>
-        function openAllStartMe() {
-            const urls = ["https://faceagle.com/"];
-            let i = 0;
-            function openNext() {
-                if (i < urls.length) {
-                    window.open(urls[i], '_blank');
-                    i++;
-                    setTimeout(openNext, 250); // Small delay to prevent browser blocking
-                }
-            }
-            openNext();
-        }
-    </script>
-            
-
-    <script>
-        function openAllStartMe() {
-            const urls = ["https://faceagle.com/"];
-            let i = 0;
-            function openNext() {
-                if (i < urls.length) {
-                    window.open(urls[i], '_blank');
-                    i++;
-                    setTimeout(openNext, 250); // Small delay to prevent browser blocking
-                }
-            }
-            openNext();
-        }
-    </script>
-            
-
-    <script>
-        function openAllStartMe() {
-            const urls = ["https://faceagle.com/"];
-            let i = 0;
-            function openNext() {
-                if (i < urls.length) {
-                    window.open(urls[i], '_blank');
-                    i++;
-                    setTimeout(openNext, 250); // Small delay to prevent browser blocking
-                }
-            }
-            openNext();
-        }
-    </script>
-            
-
-    <script>
-        function openAllStartMe() {
-            const urls = ["https://faceagle.com/"];
+            const urls = ["https://detectionstream.com/yara", "https://detectionstream.com/sigma", "https://elastic.github.io/detection-rules-explorer/", "https://rulezet.org/"];
             let i = 0;
             function openNext() {
                 if (i < urls.length) {
@@ -169,4 +142,5 @@
     </script>
             
 </body>
+
 </html>

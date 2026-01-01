@@ -33,6 +33,7 @@ SIDEBAR_ITEMS = [
     ("Phishing_EmailSuspicious_URL.html", "Phishing Email/Suspicious URL"),
     ("PhisingMalware_Analysis.html", "Phising/Malware Analysis"),
     ("Threat_Hunting.html", "Threat Hunting"),
+    ("Detection_Rules.html", "Detection Rules"),
     ("Hashes_to_Hashes.html", "Hashes to Hashes"),
     ("Malware_Related.html", "Malware Related"),
     ("Sandbox.html", "Sandbox"),
