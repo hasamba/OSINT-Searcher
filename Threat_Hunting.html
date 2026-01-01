@@ -418,5 +418,21 @@
         }
     </script>
             
+
+    <script>
+        function openAllStartMe() {
+            const urls = ["https://www.threatminer.org/", "https://www.virustotal.com/", "https://otx.alienvault.com/preview", "https://www.ransomlook.io/", "https://search.misp-community.org/", "https://docs.google.com/spreadsheets/d/1H9_xaxQHpWaa4O_Son4Gx0YOIzlcBWMsdvePFX68EKU/edit?gid=1864660085#gid=1864660085", "https://cse.google.com/cse?cx=003248445720253387346:turlh5vi4xc", "https://ransomwatch.telemetry.ltd/#/", "https://ransomware.live/map/IL", "https://falcon.crowdstrike.com/intelligence-v2/threat-landscape", "https://opentip.kaspersky.com/", "https://platform.stealthmole.com/cases/31a2db79-2106-11f0-a031-3cecefdf4a0c"];
+            let i = 0;
+            function openNext() {
+                if (i < urls.length) {
+                    window.open(urls[i], '_blank');
+                    i++;
+                    setTimeout(openNext, 250); // Small delay to prevent browser blocking
+                }
+            }
+            openNext();
+        }
+    </script>
+            
 </body>
 </html>

@@ -334,6 +334,22 @@
         }
     </script>
             
+
+    <script>
+        function openAllStartMe() {
+            const urls = ["https://detectionstream.com/yara", "https://detectionstream.com/sigma", "https://elastic.github.io/detection-rules-explorer/", "https://rulezet.org/", "https://github.com/InQuest/awesome-yara?tab=readme-ov-file#rules", "https://yarahq.github.io/", "https://github.com/jatrost/awesome-detection-rules#yara", "https://github.com/jatrost/awesome-detection-rules?tab=readme-ov-file#sigma"];
+            let i = 0;
+            function openNext() {
+                if (i < urls.length) {
+                    window.open(urls[i], '_blank');
+                    i++;
+                    setTimeout(openNext, 250); // Small delay to prevent browser blocking
+                }
+            }
+            openNext();
+        }
+    </script>
+            
 </body>
 
 </html>

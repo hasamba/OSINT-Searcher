@@ -142,32 +142,15 @@ def process_file(filename):
         if "Files/search_data.js" not in new_content:
             new_content = new_content.replace('</body>', '<script src="Files/search_data.js"></script>\n<script src="Files/search.js"></script>\n</body>')
 
-        # --- Move "Populate All" to Top ---
-        # Look for the card containing "Populate All"
-        # Using a regex that captures the tool-card div
-        # We need to be careful about nested divs, but tool-card structure is usually simple
-        
-        pop_all_pattern = re.compile(r'(<div class="tool-card">\s*<script[^>]*>.*?doPopAll.*?</script>.*?<form.*?value="Populate All".*?</form>\s*</div>)', re.DOTALL | re.IGNORECASE)
-        pop_match = pop_all_pattern.search(new_content)
-        
-        if pop_match:
-            pop_card = pop_match.group(1)
-            # Remove from original location
-            new_content = new_content.replace(pop_card, "")
-            
-            # Insert after Main Header
-            # Find <h1>...</h1></div>
-            # We want to insert it in a full-width container
-            pop_html = f'<div class="full-width-tool" style="margin-bottom: 20px;">{pop_card}</div>'
-            new_content = re.sub(r'(<div class="main-header">.*?</div>)', f'\\1\n{pop_html}', new_content, flags=re.DOTALL)
-            print(f"Moved Populate All for {filename}")
-
         # --- StartMe Detection for Modernized Files ---
         # We need to scan new_content for doStartMeSearch
         url_matches = re.findall(r"window\.open\('([^']+)'", new_content)
         is_startme_page = "doStartMeSearch" in new_content
         
-        if is_startme_page and url_matches and 'class="btn-open-all"' not in new_content:
+        open_all_btn = ""
+        open_all_script = ""
+
+        if is_startme_page and url_matches:
              # Create JS array
             js_urls = json.dumps(url_matches)
             open_all_script = f"""
@@ -188,13 +171,47 @@ def process_file(filename):
             """
             open_all_btn = '<button onclick="openAllStartMe()" class="btn-open-all">Open All</button>'
             
-            # Inject Button into H1
-            # We already replaced H1 earlier: r'<h1>.*?</h1>' -> <h1>{clean_title_h1}</h1>
-            # So we can just replace <h1>{clean_title_h1}</h1> with <h1>{clean_title_h1}{open_all_btn}</h1>
+            # Remove existing button if we are re-processing to avoid dupes or logic conflicts
+            if 'class="btn-open-all"' in new_content:
+                new_content = re.sub(r'<button.*?class="btn-open-all".*?</button>', '', new_content)
+                # Remove existing script
+                new_content = re.sub(r'<script>\s*function openAllStartMe.*?<\/script>', '', new_content, flags=re.DOTALL)
+
+
+        # --- Move "Populate All" to Top ---
+        # Look for the card containing "Populate All"
+        
+        pop_all_pattern = re.compile(r'(<div class="tool-card">\s*<script[^>]*>.*?doPopAll.*?</script>.*?<form.*?value="Populate All".*?</form>\s*</div>)', re.DOTALL | re.IGNORECASE)
+        pop_match = pop_all_pattern.search(new_content)
+        
+        if pop_match:
+            pop_card = pop_match.group(1)
+            # Remove from original location
+            new_content = new_content.replace(pop_card, "")
             
-            new_content = new_content.replace(f'<h1>{clean_title_h1}</h1>', f'<h1>{clean_title_h1}{open_all_btn}</h1>')
+            # Insert after Main Header
+            # We want to insert it in a full-width container
+            # If open_all_btn exists, we add it here!
             
-            # Inject Script before body end
+            controls_html = f'''<div class="full-width-tool" style="margin-bottom: 20px; display: flex; gap: 10px; align-items: center;">
+            <div style="flex-grow: 1;">{pop_card}</div>
+            <div>{open_all_btn}</div>
+            </div>'''
+            
+            # If we used the button here, clear it so it doesn't go to H1
+            open_all_btn = "" 
+            
+            new_content = re.sub(r'(<div class="main-header">.*?</div>)', f'\\1\n{controls_html}', new_content, flags=re.DOTALL)
+            print(f"Moved Populate All for {filename}")
+        
+        # --- Final Injection ---
+        
+        # Inject Button into H1 (Fallback if not used in Populate All container)
+        if open_all_btn:
+             new_content = new_content.replace(f'<h1>{clean_title_h1}</h1>', f'<h1>{clean_title_h1}{open_all_btn}</h1>')
+            
+        # Inject Script before body end
+        if open_all_script:
             new_content = new_content.replace('</body>', f'{open_all_script}\n</body>')
 
         with open(file_path, 'w', encoding='utf-8') as f:

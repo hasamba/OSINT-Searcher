@@ -410,5 +410,21 @@
         }
     </script>
             
+
+    <script>
+        function openAllStartMe() {
+            const urls = ["https://inteltechniques.com/tools/Name.html", "https://www.aware-online.com/en/osint-tools/people-search-tool/", "https://www.aware-online.com/en/osint-tools/people-tools/", "https://intelx.io/tools?tab=person", "https://thatsthem.com/", "https://osint-tool.com/", "https://www.spokeo.com/", "https://www.idcrawl.com/", "https://webmii.com/", "https://www.whitepages.com/", "https://web.telegram.org/k/#@OsintKierAbusha_bot"];
+            let i = 0;
+            function openNext() {
+                if (i < urls.length) {
+                    window.open(urls[i], '_blank');
+                    i++;
+                    setTimeout(openNext, 250); // Small delay to prevent browser blocking
+                }
+            }
+            openNext();
+        }
+    </script>
+            
 </body>
 </html>
