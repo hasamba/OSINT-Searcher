@@ -18,7 +18,6 @@ SIDEBAR_ITEMS = [
     ("Telephone.html", "Telephone Numbers"),
     ("Location.html", "Maps"),
     ("Documents.html", "Documents"),
-    ("Pastes.html", "Pastes"),
     ("Images.html", "Images"),
     ("Videos.html", "Videos"),
     ("Domain.html", "Domains"),
