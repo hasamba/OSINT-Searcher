@@ -496,5 +496,21 @@
         }
     </script>
             
+
+    <script>
+        function openAllStartMe() {
+            const urls = ["https://whimsical.com/osint-NxduuyaZtgi29RLwyPGMnH", "https://osintframework.com/", "https://one-plus.github.io/access.html", "https://inteltechniques.com/osintnet/tools/", "https://inteltechniques.com/tools/index.html", "https://docs.google.com/spreadsheets/d/18rtqh8EG2q1xBo2cLNyhIDuK9jrPGwYr9DI2UncoqJQ/edit#gid=930747607", "https://docs.google.com/spreadsheets/d/1JxBbMt4JvGr--G0Pkl3jP9VDTBunR2uD3_faZXDvhxc/edit#gid=1978517898", "https://docs.google.com/spreadsheets/d/1klugQqw6POlBtuzon8S0b18-gpsDwX-5OYRrB7TyNEw/edit#gid=0", "https://www.aware-online.com/en/osint-tools/", "https://github.com/IVMachiavelli/OSINT_Team_Links", "https://github.com/bluecapesecurity/PWF/blob/main/Resources/PracticalWindowsForensics-cheat-sheet.pdf", "https://www.jaiminton.com/cheatsheet/DFIR/#", "https://osint-tool.com/", "https://bellingcat.gitbook.io/toolkit", "https://cheatsheet.haax.fr/open-source-intelligence-osint/?s=09", "https://metaosint.github.io/", "https://www.osinttechniques.com/osint-tools.html", "https://lambda.black/osint.html", "https://osint.link/", "https://map.malfrats.industries/", "https://github.com/cipher387/osint_stuff_tool_collection", "https://www.hushint.com/osint/index.php", "https://www.advisor-bm.com/osint-tools", "https://cheatsheet.haax.fr/open-source-intelligence-osint/tools-and-methodology/methodology/", "https://www.andyblackassociates.co.uk/resources-andy-black-associates/osint-toolkit/", "https://www.osintcombine.com/tools", "https://github.com/sinwindie/OSINT", "https://github.com/Ph055a/OSINT_Collection/blob/master/README.md", "https://github.com/edoardottt/awesome-hacker-search-engines", "https://github.com/Nguyen-Trung-Kien/Security-Search-Engines/blob/1bda895d343e3c8cab27252b3b7f7f3c90257671/README.md", "https://docs.google.com/spreadsheets/d/1vf91U__HvlNuBkY8T12CLu34AYgEbcbk/edit#gid=183866541", "https://cylect.io/", "https://geohints.com/", "https://osinttools.io/free/", "https://synapsint.com/", "https://osint.rocks/", "https://github.com/yogsec/One-Liner-OSINT", "https://www.mariosantella.com/the-osint-rack/", "https://cignalosint.lovable.app/", "https://soctoolkit.com/"];
+            let i = 0;
+            function openNext() {
+                if (i < urls.length) {
+                    window.open(urls[i], '_blank');
+                    i++;
+                    setTimeout(openNext, 250); // Small delay to prevent browser blocking
+                }
+            }
+            openNext();
+        }
+    </script>
+            
 </body>
 </html>

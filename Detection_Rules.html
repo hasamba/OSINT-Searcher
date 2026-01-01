@@ -128,6 +128,35 @@
                     </form>
                 </div>
 
+                <div class="tool-card">
+                    <script type="text/javascript">
+                        function doStartMeSearch5() { window.open('https://yarahq.github.io/', '_blank'); }
+                    </script>
+                    <form class="tool-form" onsubmit="doStartMeSearch5(); return false;">
+                        <input type="submit" value="YARA HQ" style="width: 100%; white-space: normal;" />
+                    </form>
+                </div>
+
+                <div class="tool-card">
+                    <script type="text/javascript">
+                        function doStartMeSearch6() { window.open('https://github.com/jatrost/awesome-detection-rules#yara', '_blank'); }
+                    </script>
+                    <form class="tool-form" onsubmit="doStartMeSearch6(); return false;">
+                        <input type="submit" value="Awesome Detection Rules (YARA)"
+                            style="width: 100%; white-space: normal;" />
+                    </form>
+                </div>
+
+                <div class="tool-card">
+                    <script type="text/javascript">
+                        function doStartMeSearch7() { window.open('https://github.com/jatrost/awesome-detection-rules?tab=readme-ov-file#sigma', '_blank'); }
+                    </script>
+                    <form class="tool-form" onsubmit="doStartMeSearch7(); return false;">
+                        <input type="submit" value="Awesome Detection Rules (Sigma)"
+                            style="width: 100%; white-space: normal;" />
+                    </form>
+                </div>
+
             </div>
         </main>
     </div>
@@ -137,7 +166,16 @@
 
     <script>
         function openAllStartMe() {
-            const urls = ["https://detectionstream.com/yara", "https://detectionstream.com/sigma", "https://elastic.github.io/detection-rules-explorer/", "https://rulezet.org/"];
+            const urls = [
+                "https://detectionstream.com/yara",
+                "https://detectionstream.com/sigma",
+                "https://elastic.github.io/detection-rules-explorer/",
+                "https://rulezet.org/",
+                "https://github.com/InQuest/awesome-yara?tab=readme-ov-file#rules",
+                "https://yarahq.github.io/",
+                "https://github.com/jatrost/awesome-detection-rules#yara",
+                "https://github.com/jatrost/awesome-detection-rules?tab=readme-ov-file#sigma"
+            ];
             let i = 0;
             function openNext() {
                 if (i < urls.length) {
@@ -153,7 +191,7 @@
 
     <script>
         function openAllStartMe() {
-            const urls = ["https://detectionstream.com/yara", "https://detectionstream.com/sigma", "https://elastic.github.io/detection-rules-explorer/", "https://rulezet.org/", "https://github.com/InQuest/awesome-yara?tab=readme-ov-file#rules"];
+            const urls = ["https://detectionstream.com/yara", "https://detectionstream.com/sigma", "https://elastic.github.io/detection-rules-explorer/", "https://rulezet.org/", "https://github.com/InQuest/awesome-yara?tab=readme-ov-file#rules", "https://yarahq.github.io/", "https://github.com/jatrost/awesome-detection-rules#yara", "https://github.com/jatrost/awesome-detection-rules?tab=readme-ov-file#sigma"];
             let i = 0;
             function openNext() {
                 if (i < urls.length) {
