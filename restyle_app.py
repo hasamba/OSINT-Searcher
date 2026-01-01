@@ -30,7 +30,6 @@ SIDEBAR_ITEMS = [
     ("Radio.html", "Live Audio"),
     ("Video.html", "Live Video"),
     ("API.html", "APIs"),
-    ("License.html", "License"),
     ("Forensic_Blog_Feed.html", "Forensic Blog Feed"),
     ("Phishing_EmailSuspicious_URL.html", "Phishing Email/Suspicious URL"),
     ("PhisingMalware_Analysis.html", "Phising/Malware Analysis"),
