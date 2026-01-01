@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Phishing Email/Suspicious URL</title>
+    <link rel="icon" type="image/png" href="Files/favicon.png">
     <link rel="stylesheet" href="Files/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -309,6 +310,22 @@
             urls.forEach(url => {
                 window.open(url, '_blank');
             });
+        }
+    </script>
+            
+
+    <script>
+        function openAllStartMe() {
+            const urls = ["https://app.phishtool.com/", "https://www.whatismyip.com/email-header-analyzer/", "https://mxtoolbox.com/EmailHeaders.aspx", "https://www.iptrackeronline.com/email-header-analysis.php", "https://twitter.com/hacktoria/status/1575737778628952069", "https://github.com/keraattin/EmailAnalyzer", "https://urlscan.io/", "https://www.brightcloud.com/tools/url-ip-lookup.php", "https://www.scanmysms.com/en", "https://wa.me/97236444417?text=4", "https://app.any.run/", "https://transparencyreport.google.com/safe-browsing/search", "https://scanurl.net/", "https://www.browserling.com/", "https://safeweb.norton.com/", "https://www.phishtank.com/", "https://www.virustotal.com/gui/home/upload", "https://www.psafe.com/dfndr-lab/", "https://www.urlvoid.com/", "https://sitecheck.sucuri.net/", "https://www.scanurl.me/?lang=en", "https://zulu.zscaler.com/", "https://urlquery.net/", "https://www.ipqualityscore.com/threat-feeds/malicious-url-scanner", "https://easydmarc.com/tools/phishing-url", "https://app.validin.com/detail", "https://hunting.abuse.ch/"];
+            let i = 0;
+            function openNext() {
+                if (i < urls.length) {
+                    window.open(urls[i], '_blank');
+                    i++;
+                    setTimeout(openNext, 250); // Small delay to prevent browser blocking
+                }
+            }
+            openNext();
         }
     </script>
             

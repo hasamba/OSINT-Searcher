@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Username OSINT</title>
+    <link rel="icon" type="image/png" href="Files/favicon.png">
     <link rel="stylesheet" href="Files/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -253,6 +254,22 @@
             urls.forEach(url => {
                 window.open(url, '_blank');
             });
+        }
+    </script>
+            
+
+    <script>
+        function openAllStartMe() {
+            const urls = ["https://inteltechniques.com/tools/Username.html", "https://one-plus.github.io/EmailUsername", "https://intelx.io/tools?tab=username", "https://web.telegram.org/k/#@UniversalSearchRobot", "https://osint.rocks/", "https://www.aware-online.com/en/osint-tools/username-search-tool/", "https://www.aware-online.com/osint-tools/gebruikersnamen-tools/", "https://osint-tool.com/", "https://www.spokeo.com/", "https://namecheckup.com/", "https://whatsmyname.app/", "https://namechk.com/", "https://ufind.name/", "https://web.telegram.org/k/#@osint_maigret_bot", "https://instantusername.com/#/", "https://www.google.com/search?q=site:amazon.com+%3Cusername%3E", "https://api.github.com/users/%3Cusername%3E/events/public", "https://tinder.com/@%3Cusername%3E", "https://github.com/sherlock-project/sherlock", "https://search.ddosecrets.com/"];
+            let i = 0;
+            function openNext() {
+                if (i < urls.length) {
+                    window.open(urls[i], '_blank');
+                    i++;
+                    setTimeout(openNext, 250); // Small delay to prevent browser blocking
+                }
+            }
+            openNext();
         }
     </script>
             

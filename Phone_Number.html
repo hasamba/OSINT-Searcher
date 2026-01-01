@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Phone Number</title>
+    <link rel="icon" type="image/png" href="Files/favicon.png">
     <link rel="stylesheet" href="Files/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -173,6 +174,22 @@
             urls.forEach(url => {
                 window.open(url, '_blank');
             });
+        }
+    </script>
+            
+
+    <script>
+        function openAllStartMe() {
+            const urls = ["https://inteltechniques.com/tools/Telephone.html", "https://intelx.io/tools?tab=telephone", "https://www.truecaller.com/", "https://sync.me/", "https://www.aware-online.com/en/how-can-i-find-a-google-account-by-phone-number/", "https://epieos.com/", "https://www.numlookup.com/", "https://seon.io/", "https://web.telegram.org/k/#@UniversalSearchRobot", "https://osint.rocks/"];
+            let i = 0;
+            function openNext() {
+                if (i < urls.length) {
+                    window.open(urls[i], '_blank');
+                    i++;
+                    setTimeout(openNext, 250); // Small delay to prevent browser blocking
+                }
+            }
+            openNext();
         }
     </script>
             

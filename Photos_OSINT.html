@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Photos OSINT</title>
+    <link rel="icon" type="image/png" href="Files/favicon.png">
     <link rel="stylesheet" href="Files/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -229,6 +230,22 @@
             urls.forEach(url => {
                 window.open(url, '_blank');
             });
+        }
+    </script>
+            
+
+    <script>
+        function openAllStartMe() {
+            const urls = ["https://inteltechniques.com/tools/Images.html", "https://intelx.io/tools?tab=image", "https://www.google.com/imghp", "https://www.reverse-image-search.com/", "https://tineye.com/", "https://yandex.com/images/?rpt=imageview", "https://www.bing.com/images/feed", "https://graph.baidu.com/pcpage/index?tpl_from=pc", "https://www.aware-online.com/en/osint-tools/photo-and-video-tools/", "https://facecheck.id/?s=09", "https://www.numlookup.com/reverse-image-search", "https://lenso.ai/en", "https://chatgpt.com/g/g-brlHi7t2R-geoguessr-gpt", "https://labs.tib.eu/geoestimation/", "https://picarta.ai/", "https://earthkit.app/", "https://geospy.web.app/"];
+            let i = 0;
+            function openNext() {
+                if (i < urls.length) {
+                    window.open(urls[i], '_blank');
+                    i++;
+                    setTimeout(openNext, 250); // Small delay to prevent browser blocking
+                }
+            }
+            openNext();
         }
     </script>
             

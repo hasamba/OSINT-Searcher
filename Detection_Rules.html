@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Detection Rules</title>
+    <link rel="icon" type="image/png" href="Files/favicon.png">
     <link rel="stylesheet" href="Files/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -188,6 +189,22 @@
         }
     </script>
 
+
+    <script>
+        function openAllStartMe() {
+            const urls = ["https://detectionstream.com/yara", "https://detectionstream.com/sigma", "https://elastic.github.io/detection-rules-explorer/", "https://rulezet.org/", "https://github.com/InQuest/awesome-yara?tab=readme-ov-file#rules", "https://yarahq.github.io/", "https://github.com/jatrost/awesome-detection-rules#yara", "https://github.com/jatrost/awesome-detection-rules?tab=readme-ov-file#sigma"];
+            let i = 0;
+            function openNext() {
+                if (i < urls.length) {
+                    window.open(urls[i], '_blank');
+                    i++;
+                    setTimeout(openNext, 250); // Small delay to prevent browser blocking
+                }
+            }
+            openNext();
+        }
+    </script>
+            
 
     <script>
         function openAllStartMe() {

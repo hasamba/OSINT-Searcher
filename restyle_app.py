@@ -111,8 +111,13 @@ def process_file(filename):
         # It's already modernized, let's just update the sidebar and title
         print(f"Updating modernized file: {filename}")
         
-        # Update Title
-        new_content = re.sub(r'<title>.*?</title>', f'<title>{title}</title>', content)
+        # Update Title and inject Favicon if missing
+        if '<link rel="icon"' not in content:
+            new_content = re.sub(r'<link rel="stylesheet"', '<link rel="icon" type="image/png" href="Files/favicon.png">\n    <link rel="stylesheet"', content)
+        else:
+            new_content = content
+        
+        new_content = re.sub(r'<title>.*?</title>', f'<title>{title}</title>', new_content)
         
         # Update H1
         clean_title_h1 = title.replace(' Tool', '')
@@ -292,6 +297,7 @@ def process_file(filename):
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{title}</title>
     <link rel="stylesheet" href="Files/style.css">
+    <link rel="icon" type="image/png" href="Files/favicon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
