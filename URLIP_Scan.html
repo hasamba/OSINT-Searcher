@@ -1,0 +1,445 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URL/IP Scan</title>
+    <link rel="stylesheet" href="Files/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="app-container">
+    <!-- Sidebar -->
+    <nav class="sidebar">
+        <div class="sidebar-header">
+            <h2>OSINT Searcher</h2>
+        </div>
+        <ul class="nav-links">
+            <li><a href="Search.html">Search Engines</a></li>
+            <li><a href="Facebook.html">Facebook</a></li>
+            <li><a href="Twitter.html">X (Twitter)</a></li>
+            <li><a href="Instagram.html">Instagram</a></li>
+            <li><a href="LinkedIn.html">LinkedIn</a></li>
+            <li><a href="Communities.html">Communities</a></li>
+            <li><a href="Email.html">Email Addresses</a></li>
+            <li><a href="Username.html">Usernames</a></li>
+            <li><a href="Name.html">Names</a></li>
+            <li><a href="Address.html">Addresses</a></li>
+            <li><a href="Telephone.html">Telephone Numbers</a></li>
+            <li><a href="Location.html">Maps</a></li>
+            <li><a href="Documents.html">Documents</a></li>
+            <li><a href="Pastes.html">Pastes</a></li>
+            <li><a href="Images.html">Images</a></li>
+            <li><a href="Videos.html">Videos</a></li>
+            <li><a href="Domain.html">Domains</a></li>
+            <li><a href="IP.html">IP Addresses</a></li>
+            <li><a href="Business.html">Business & Gov</a></li>
+            <li><a href="Vehicle.html">Vehicles</a></li>
+            <li><a href="Currencies.html">Virtual Currencies</a></li>
+            <li><a href="Breaches.html">Data Breaches</a></li>
+            <li><a href="Threats.html">Threat Intelligence</a></li>
+            <li><a href="Radio.html">Live Audio</a></li>
+            <li><a href="Video.html">Live Video</a></li>
+            <li><a href="API.html">APIs</a></li>
+            <li><a href="License.html">License</a></li>
+            <li><a href="Forensic_Blog_Feed.html">Forensic Blog Feed</a></li>
+            <li><a href="Phishing_EmailSuspicious_URL.html">Phishing Email/Suspicious URL</a></li>
+            <li><a href="PhisingMalware_Analysis.html">Phising/Malware Analysis</a></li>
+            <li><a href="Threat_Hunting.html">Threat Hunting</a></li>
+            <li><a href="Hashes_to_Hashes.html">Hashes to Hashes</a></li>
+            <li><a href="Malware_Related.html">Malware Related</a></li>
+            <li><a href="Sandbox.html">Sandbox</a></li>
+            <li><a href="GoogleShodan_Dorks.html">Google/Shodan Dorks</a></li>
+            <li><a href="URLIP_Scan.html" class="active">URL/IP Scan</a></li>
+            <li><a href="Social_Serch.html">Social Serch</a></li>
+            <li><a href="Courses.html">Courses</a></li>
+            <li><a href="OSINT_Frameworks.html">OSINT Frameworks</a></li>
+            <li><a href="Username_OSINT.html">Username OSINT</a></li>
+            <li><a href="Full_Name_OSINT.html">Full Name OSINT</a></li>
+            <li><a href="Emails_OSINT.html">Emails OSINT</a></li>
+            <li><a href="Photos_OSINT.html">Photos OSINT</a></li>
+            <li><a href="Social_Media_OSINT.html">Social Media OSINT</a></li>
+            <li><a href="Domain_OSINT.html">Domain OSINT</a></li>
+            <li><a href="PasswordLeaks_OSINT.html">Password/Leaks OSINT</a></li>
+            <li><a href="Business_OSINT.html">Business OSINT</a></li>
+            <li><a href="Phone_Number.html">Phone Number</a></li>
+            <li><a href="Faces.html">Faces</a></li>
+            <li><a href="Geolocation.html">Geolocation</a></li>
+            <li><a href="Email_Osint_Workflow.html">Email Osint Workflow</a></li>
+            <li><a href="Name_OSINT_Workflow.html">Name OSINT Workflow</a></li>
+            <li><a href="Username_OSINT_Flowchart.html">Username OSINT Flowchart</a></li>
+            <li><a href="Domain_OSINT_Flowchart.html">Domain OSINT Flowchart</a></li>
+            <li><a href="Phone_OSINT_Workflow.html">Phone OSINT Workflow</a></li>
+            <li><a href="Location_Osint_Workfllow.html">Location Osint Workfllow</a></li>
+            <li><a href="Search_Engines.html">Search Engines</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="main-header">
+            <h1>URL/IP Scan</h1>
+        </div>
+        <div class="tools-grid">
+
+            <div class="tool-card">
+                <script type="text/javascript">
+                    function doStartMeSearch0() { window.open('https://osint-tool.com/', '_blank'); }
+                </script>
+                <form class="tool-form" onsubmit="doStartMeSearch0(); return false;">
+                    <input type="submit" value="Vortimo OSINT Tool" style="width: 100%; white-space: normal;" />
+                </form>
+            </div>
+            <div class="tool-card">
+                <script type="text/javascript">
+                    function doStartMeSearch1() { window.open('https://www.virustotal.com/gui/home/search', '_blank'); }
+                </script>
+                <form class="tool-form" onsubmit="doStartMeSearch1(); return false;">
+                    <input type="submit" value="VirusTotal" style="width: 100%; white-space: normal;" />
+                </form>
+            </div>
+            <div class="tool-card">
+                <script type="text/javascript">
+                    function doStartMeSearch2() { window.open('https://urlscan.io/', '_blank'); }
+                </script>
+                <form class="tool-form" onsubmit="doStartMeSearch2(); return false;">
+                    <input type="submit" value="URL and website scanner" style="width: 100%; white-space: normal;" />
+                </form>
+            </div>
+            <div class="tool-card">
+                <script type="text/javascript">
+                    function doStartMeSearch3() { window.open('https://www.toolsvoid.com/url-dump/', '_blank'); }
+                </script>
+                <form class="tool-form" onsubmit="doStartMeSearch3(); return false;">
+                    <input type="submit" value="URL Content Dump, Web Sniffer | Toolsvoid" style="width: 100%; white-space: normal;" />
+                </form>
+            </div>
+            <div class="tool-card">
+                <script type="text/javascript">
+                    function doStartMeSearch4() { window.open('https://web-check.xyz/', '_blank'); }
+                </script>
+                <form class="tool-form" onsubmit="doStartMeSearch4(); return false;">
+                    <input type="submit" value="Web-check.xyz" style="width: 100%; white-space: normal;" />
+                </form>
+            </div>
+            <div class="tool-card">
+                <script type="text/javascript">
+                    function doStartMeSearch5() { window.open('https://www.abuseipdb.com/', '_blank'); }
+                </script>
+                <form class="tool-form" onsubmit="doStartMeSearch5(); return false;">
+                    <input type="submit" value="AbuseIPDB" style="width: 100%; white-space: normal;" />
+                </form>
+            </div>
+            <div class="tool-card">
+                <script type="text/javascript">
+                    function doStartMeSearch6() { window.open('https://www.ipqualityscore.com/', '_blank'); }
+                </script>
+                <form class="tool-form" onsubmit="doStartMeSearch6(); return false;">
+                    <input type="submit" value="IPQualityScore" style="width: 100%; white-space: normal;" />
+                </form>
+            </div>
+            <div class="tool-card">
+                <script type="text/javascript">
+                    function doStartMeSearch7() { window.open('https://www.talosintelligence.com/', '_blank'); }
+                </script>
+                <form class="tool-form" onsubmit="doStartMeSearch7(); return false;">
+                    <input type="submit" value="Cisco Talos Intelligence Group" style="width: 100%; white-space: normal;" />
+                </form>
+            </div>
+            <div class="tool-card">
+                <script type="text/javascript">
+                    function doStartMeSearch8() { window.open('https://ipinfo.io/', '_blank'); }
+                </script>
+                <form class="tool-form" onsubmit="doStartMeSearch8(); return false;">
+                    <input type="submit" value="IPInfo" style="width: 100%; white-space: normal;" />
+                </form>
+            </div>
+            <div class="tool-card">
+                <script type="text/javascript">
+                    function doStartMeSearch9() { window.open('https://checkphish.ai/', '_blank'); }
+                </script>
+                <form class="tool-form" onsubmit="doStartMeSearch9(); return false;">
+                    <input type="submit" value="Checkphish.ai" style="width: 100%; white-space: normal;" />
+                </form>
+            </div>
+            <div class="tool-card">
+                <script type="text/javascript">
+                    function doStartMeSearch10() { window.open('https://centralops.net/co/', '_blank'); }
+                </script>
+                <form class="tool-form" onsubmit="doStartMeSearch10(); return false;">
+                    <input type="submit" value="WHOIS information" style="width: 100%; white-space: normal;" />
+                </form>
+            </div>
+            <div class="tool-card">
+                <script type="text/javascript">
+                    function doStartMeSearch11() { window.open('https://exchange.xforce.ibmcloud.com/', '_blank'); }
+                </script>
+                <form class="tool-form" onsubmit="doStartMeSearch11(); return false;">
+                    <input type="submit" value="IBM X-Force Exchange" style="width: 100%; white-space: normal;" />
+                </form>
+            </div>
+            <div class="tool-card">
+                <script type="text/javascript">
+                    function doStartMeSearch12() { window.open('https://metadefender.opswat.com/', '_blank'); }
+                </script>
+                <form class="tool-form" onsubmit="doStartMeSearch12(); return false;">
+                    <input type="submit" value="Opswat-meta defender Cloud" style="width: 100%; white-space: normal;" />
+                </form>
+            </div>
+            <div class="tool-card">
+                <script type="text/javascript">
+                    function doStartMeSearch13() { window.open('https://www.threatminer.org/', '_blank'); }
+                </script>
+                <form class="tool-form" onsubmit="doStartMeSearch13(); return false;">
+                    <input type="submit" value="ThreatMiner" style="width: 100%; white-space: normal;" />
+                </form>
+            </div>
+            <div class="tool-card">
+                <script type="text/javascript">
+                    function doStartMeSearch14() { window.open('https://www.criminalip.io/', '_blank'); }
+                </script>
+                <form class="tool-form" onsubmit="doStartMeSearch14(); return false;">
+                    <input type="submit" value="Criminal IP" style="width: 100%; white-space: normal;" />
+                </form>
+            </div>
+            <div class="tool-card">
+                <script type="text/javascript">
+                    function doStartMeSearch15() { window.open('http://cybercrime-tracker.net/', '_blank'); }
+                </script>
+                <form class="tool-form" onsubmit="doStartMeSearch15(); return false;">
+                    <input type="submit" value="Cybercrime-tracker.net" style="width: 100%; white-space: normal;" />
+                </form>
+            </div>
+            <div class="tool-card">
+                <script type="text/javascript">
+                    function doStartMeSearch16() { window.open('https://phishtank.org/', '_blank'); }
+                </script>
+                <form class="tool-form" onsubmit="doStartMeSearch16(); return false;">
+                    <input type="submit" value="Phishtank.org" style="width: 100%; white-space: normal;" />
+                </form>
+            </div>
+            <div class="tool-card">
+                <script type="text/javascript">
+                    function doStartMeSearch17() { window.open('https://openphish.com/index.html', '_blank'); }
+                </script>
+                <form class="tool-form" onsubmit="doStartMeSearch17(); return false;">
+                    <input type="submit" value="OpenPhish" style="width: 100%; white-space: normal;" />
+                </form>
+            </div>
+            <div class="tool-card">
+                <script type="text/javascript">
+                    function doStartMeSearch18() { window.open('https://www.ransomware.live/#/', '_blank'); }
+                </script>
+                <form class="tool-form" onsubmit="doStartMeSearch18(); return false;">
+                    <input type="submit" value="Ransomware.live" style="width: 100%; white-space: normal;" />
+                </form>
+            </div>
+            <div class="tool-card">
+                <script type="text/javascript">
+                    function doStartMeSearch19() { window.open('https://transparencyreport.google.com/safe-browsing/search?hl=en', '_blank'); }
+                </script>
+                <form class="tool-form" onsubmit="doStartMeSearch19(); return false;">
+                    <input type="submit" value="Google Safe Browsing" style="width: 100%; white-space: normal;" />
+                </form>
+            </div>
+            <div class="tool-card">
+                <script type="text/javascript">
+                    function doStartMeSearch20() { window.open('https://www.urlvoid.com/', '_blank'); }
+                </script>
+                <form class="tool-form" onsubmit="doStartMeSearch20(); return false;">
+                    <input type="submit" value="URLVoid" style="width: 100%; white-space: normal;" />
+                </form>
+            </div>
+            <div class="tool-card">
+                <script type="text/javascript">
+                    function doStartMeSearch21() { window.open('https://www.scanurl.me/?lang=en', '_blank'); }
+                </script>
+                <form class="tool-form" onsubmit="doStartMeSearch21(); return false;">
+                    <input type="submit" value="Scanurl.me" style="width: 100%; white-space: normal;" />
+                </form>
+            </div>
+            <div class="tool-card">
+                <script type="text/javascript">
+                    function doStartMeSearch22() { window.open('https://urlquery.net/', '_blank'); }
+                </script>
+                <form class="tool-form" onsubmit="doStartMeSearch22(); return false;">
+                    <input type="submit" value="urlquery.net" style="width: 100%; white-space: normal;" />
+                </form>
+            </div>
+            <div class="tool-card">
+                <script type="text/javascript">
+                    function doStartMeSearch23() { window.open('https://zulu.zscaler.com/', '_blank'); }
+                </script>
+                <form class="tool-form" onsubmit="doStartMeSearch23(); return false;">
+                    <input type="submit" value="Zscaler" style="width: 100%; white-space: normal;" />
+                </form>
+            </div>
+            <div class="tool-card">
+                <script type="text/javascript">
+                    function doStartMeSearch24() { window.open('http://www.blocklist.de/en/search.html', '_blank'); }
+                </script>
+                <form class="tool-form" onsubmit="doStartMeSearch24(); return false;">
+                    <input type="submit" value="blocklist.de" style="width: 100%; white-space: normal;" />
+                </form>
+            </div>
+            <div class="tool-card">
+                <script type="text/javascript">
+                    function doStartMeSearch25() { window.open('https://s0cm0nkey.github.io/EasyThreat.html', '_blank'); }
+                </script>
+                <form class="tool-form" onsubmit="doStartMeSearch25(); return false;">
+                    <input type="submit" value="EasyThreat Tool" style="width: 100%; white-space: normal;" />
+                </form>
+            </div>
+            <div class="tool-card">
+                <script type="text/javascript">
+                    function doStartMeSearch26() { window.open('https://www.getsafeonline.org/checkawebsite/', '_blank'); }
+                </script>
+                <form class="tool-form" onsubmit="doStartMeSearch26(); return false;">
+                    <input type="submit" value="Free Website Scam Checker" style="width: 100%; white-space: normal;" />
+                </form>
+            </div>
+            <div class="tool-card">
+                <script type="text/javascript">
+                    function doStartMeSearch27() { window.open('https://www.scamalert.sg/', '_blank'); }
+                </script>
+                <form class="tool-form" onsubmit="doStartMeSearch27(); return false;">
+                    <input type="submit" value="ScamAlert" style="width: 100%; white-space: normal;" />
+                </form>
+            </div>
+            <div class="tool-card">
+                <script type="text/javascript">
+                    function doStartMeSearch28() { window.open('https://www.scamadviser.com/', '_blank'); }
+                </script>
+                <form class="tool-form" onsubmit="doStartMeSearch28(); return false;">
+                    <input type="submit" value="Scamadviser" style="width: 100%; white-space: normal;" />
+                </form>
+            </div>
+            <div class="tool-card">
+                <script type="text/javascript">
+                    function doStartMeSearch29() { window.open('https://otx.alienvault.com/', '_blank'); }
+                </script>
+                <form class="tool-form" onsubmit="doStartMeSearch29(); return false;">
+                    <input type="submit" value="AlienVault Open Threat Exchange" style="width: 100%; white-space: normal;" />
+                </form>
+            </div>
+            <div class="tool-card">
+                <script type="text/javascript">
+                    function doStartMeSearch30() { window.open('https://tria.ge/', '_blank'); }
+                </script>
+                <form class="tool-form" onsubmit="doStartMeSearch30(); return false;">
+                    <input type="submit" value="Hatching Triage" style="width: 100%; white-space: normal;" />
+                </form>
+            </div>
+            <div class="tool-card">
+                <script type="text/javascript">
+                    function doStartMeSearch31() { window.open('https://threatstop.com/checkip', '_blank'); }
+                </script>
+                <form class="tool-form" onsubmit="doStartMeSearch31(); return false;">
+                    <input type="submit" value="IoC IP and Domain Name Tool" style="width: 100%; white-space: normal;" />
+                </form>
+            </div>
+            <div class="tool-card">
+                <script type="text/javascript">
+                    function doStartMeSearch32() { window.open('https://isitphishing.org/', '_blank'); }
+                </script>
+                <form class="tool-form" onsubmit="doStartMeSearch32(); return false;">
+                    <input type="submit" value="Is It Phishing (IP,domain,brand, host)" style="width: 100%; white-space: normal;" />
+                </form>
+            </div>
+            <div class="tool-card">
+                <script type="text/javascript">
+                    function doStartMeSearch33() { window.open('https://www.url-analyzer.net/', '_blank'); }
+                </script>
+                <form class="tool-form" onsubmit="doStartMeSearch33(); return false;">
+                    <input type="submit" value="Joe Sandbox URL Analyzer" style="width: 100%; white-space: normal;" />
+                </form>
+            </div>
+            <div class="tool-card">
+                <script type="text/javascript">
+                    function doStartMeSearch34() { window.open('https://sitecheck.sucuri.net/', '_blank'); }
+                </script>
+                <form class="tool-form" onsubmit="doStartMeSearch34(); return false;">
+                    <input type="submit" value="Sucuri Site Check" style="width: 100%; white-space: normal;" />
+                </form>
+            </div>
+            <div class="tool-card">
+                <script type="text/javascript">
+                    function doStartMeSearch35() { window.open('https://mxtoolbox.com/SuperTool.aspx', '_blank'); }
+                </script>
+                <form class="tool-form" onsubmit="doStartMeSearch35(); return false;">
+                    <input type="submit" value="MX Toolbox SuperTool" style="width: 100%; white-space: normal;" />
+                </form>
+            </div>
+            <div class="tool-card">
+                <script type="text/javascript">
+                    function doStartMeSearch36() { window.open('https://securitytrails.com/#search', '_blank'); }
+                </script>
+                <form class="tool-form" onsubmit="doStartMeSearch36(); return false;">
+                    <input type="submit" value="SecurityTrails" style="width: 100%; white-space: normal;" />
+                </form>
+            </div>
+            <div class="tool-card">
+                <script type="text/javascript">
+                    function doStartMeSearch37() { window.open('https://www.brightcloud.com/tools/url-ip-lookup.php', '_blank'); }
+                </script>
+                <form class="tool-form" onsubmit="doStartMeSearch37(); return false;">
+                    <input type="submit" value="Webroot Brightcloud URL Lookup" style="width: 100%; white-space: normal;" />
+                </form>
+            </div>
+            <div class="tool-card">
+                <script type="text/javascript">
+                    function doStartMeSearch38() { window.open('http://10.0.0.162/admin/queryads.php', '_blank'); }
+                </script>
+                <form class="tool-form" onsubmit="doStartMeSearch38(); return false;">
+                    <input type="submit" value="Private PI-Hole Blocked search" style="width: 100%; white-space: normal;" />
+                </form>
+            </div>
+            <div class="tool-card">
+                <script type="text/javascript">
+                    function doStartMeSearch39() { window.open('http://20.123.9.203/dashboard', '_blank'); }
+                </script>
+                <form class="tool-form" onsubmit="doStartMeSearch39(); return false;">
+                    <input type="submit" value="IntelOwl" style="width: 100%; white-space: normal;" />
+                </form>
+            </div>
+            <div class="tool-card">
+                <script type="text/javascript">
+                    function doStartMeSearch40() { window.open('https://tenroot-misp.northeurope.cloudapp.azure.com/', '_blank'); }
+                </script>
+                <form class="tool-form" onsubmit="doStartMeSearch40(); return false;">
+                    <input type="submit" value="MISP" style="width: 100%; white-space: normal;" />
+                </form>
+            </div>
+            <div class="tool-card">
+                <script type="text/javascript">
+                    function doStartMeSearch41() { window.open('https://viz.greynoise.io/', '_blank'); }
+                </script>
+                <form class="tool-form" onsubmit="doStartMeSearch41(); return false;">
+                    <input type="submit" value="GreyNoise Visualizer" style="width: 100%; white-space: normal;" />
+                </form>
+            </div>
+            <div class="tool-card">
+                <script type="text/javascript">
+                    function doStartMeSearch42() { window.open('https://shadowcrypt.net/', '_blank'); }
+                </script>
+                <form class="tool-form" onsubmit="doStartMeSearch42(); return false;">
+                    <input type="submit" value="ShadowCrypt" style="width: 100%; white-space: normal;" />
+                </form>
+            </div>
+            <div class="tool-card">
+                <script type="text/javascript">
+                    function doStartMeSearch43() { window.open('https://threatbook.io/', '_blank'); }
+                </script>
+                <form class="tool-form" onsubmit="doStartMeSearch43(); return false;">
+                    <input type="submit" value="ThreatBook TI" style="width: 100%; white-space: normal;" />
+                </form>
+            </div>        </div>
+
+    </main>
+</div>
+
+</body>
+</html>
