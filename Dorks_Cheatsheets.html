@@ -1,19 +1,21 @@
 <!doctype html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Google/Shodan Dorks</title>
+    <title>Dorks Cheatsheets</title>
     <link rel="stylesheet" href="Files/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
-<div class="app-container">
-    <!-- Sidebar -->
-    <nav class="sidebar">
+    <div class="app-container">
+        <!-- Sidebar -->
+        <nav class="sidebar">
         <div class="sidebar-header">
             <h2>OSINT Searcher</h2>
         </div>
@@ -52,7 +54,8 @@
             <li><a href="Hashes_to_Hashes.html">Hashes to Hashes</a></li>
             <li><a href="Malware_Related.html">Malware Related</a></li>
             <li><a href="Sandbox.html">Sandbox</a></li>
-            <li><a href="GoogleShodan_Dorks.html" class="active">Google/Shodan Dorks</a></li>
+            <li><a href="Dorks_Cheatsheets.html" class="active">Dorks Cheatsheets</a></li>
+            <li><a href="Shodan.html">Shodan</a></li>
             <li><a href="URLIP_Scan.html">URL/IP Scan</a></li>
             <li><a href="Social_Search.html">Social Search</a></li>
             <li><a href="Courses.html">Courses</a></li>
@@ -71,85 +74,95 @@
         </ul>
     </nav>
 
-    <!-- Main Content -->
-    <main class="main-content">
-        <div class="main-header">
-            <h1>Google/Shodan Dorks<button onclick="openAllStartMe()" class="btn-open-all">Open All</button></h1>
-        </div>
-        <div class="tools-grid">
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="main-header">
+                <h1>Dorks Cheatsheets<button onclick="openAllStartMe()" class="btn-open-all">Open All</button></h1>
+            </div>
+            <div class="tools-grid">
 
-            <div class="tool-card">
-                <script type="text/javascript">
-                    function doStartMeSearch0() { window.open('https://github.com/0xAbbarhSF/Info-Sec-Dork-List/blob/main/hidden_files_dork.txt', '_blank'); }
-                </script>
-                <form class="tool-form" onsubmit="doStartMeSearch0(); return false;">
-                    <input type="submit" value="hidden files dork" style="width: 100%; white-space: normal;" />
-                </form>
+                <div class="tool-card">
+                    <script type="text/javascript">
+                        function doStartMeSearch0() { window.open('https://github.com/0xAbbarhSF/Info-Sec-Dork-List/blob/main/hidden_files_dork.txt', '_blank'); }
+                    </script>
+                    <form class="tool-form" onsubmit="doStartMeSearch0(); return false;">
+                        <input type="submit" value="hidden files dork" style="width: 100%; white-space: normal;" />
+                    </form>
+                </div>
+                <div class="tool-card">
+                    <script type="text/javascript">
+                        function doStartMeSearch1() { window.open('https://securitytrails.com/blog/top-shodan-dorks', '_blank'); }
+                    </script>
+                    <form class="tool-form" onsubmit="doStartMeSearch1(); return false;">
+                        <input type="submit" value="Top 40 Shodan Dorks for Finding Sensitive IoT Data"
+                            style="width: 100%; white-space: normal;" />
+                    </form>
+                </div>
+                <div class="tool-card">
+                    <script type="text/javascript">
+                        function doStartMeSearch2() { window.open('https://github.com/cipher387/Dorks-collections-list/', '_blank'); }
+                    </script>
+                    <form class="tool-form" onsubmit="doStartMeSearch2(); return false;">
+                        <input type="submit" value="Dorks collections list" style="width: 100%; white-space: normal;" />
+                    </form>
+                </div>
+                <div class="tool-card">
+                    <script type="text/javascript">
+                        function doStartMeSearch3() { window.open('https://twitter.com/AseemShrey/status/1508059759491964928', '_blank'); }
+                    </script>
+                    <form class="tool-form" onsubmit="doStartMeSearch3(); return false;">
+                        <input type="submit" value="Top 7 #Shodan Dorks (Twitter Thread)"
+                            style="width: 100%; white-space: normal;" />
+                    </form>
+                </div>
+                <div class="tool-card">
+                    <script type="text/javascript">
+                        function doStartMeSearch4() { window.open('https://github.com/jakejarvis/awesome-shodan-queries', '_blank'); }
+                    </script>
+                    <form class="tool-form" onsubmit="doStartMeSearch4(); return false;">
+                        <input type="submit" value="awesom shodan queries" style="width: 100%; white-space: normal;" />
+                    </form>
+                </div>
+                <div class="tool-card">
+                    <script type="text/javascript">
+                        function doStartMeSearch5() { window.open('https://www.exploit-db.com/google-hacking-database', '_blank'); }
+                    </script>
+                    <form class="tool-form" onsubmit="doStartMeSearch5(); return false;">
+                        <input type="submit" value="Google Hacking Database"
+                            style="width: 100%; white-space: normal;" />
+                    </form>
+                </div>
+                <div class="tool-card">
+                    <script type="text/javascript">
+                        function doStartMeSearch6() { window.open('https://twitter.com/TakSec/status/1683175246801797120?s=09&t=zXvq-_nviPlMHAobDoXoqg', '_blank'); }
+                    </script>
+                    <form class="tool-form" onsubmit="doStartMeSearch6(); return false;">
+                        <input type="submit" value="Domain documents Dork" style="width: 100%; white-space: normal;" />
+                    </form>
+                </div>
             </div>
-            <div class="tool-card">
-                <script type="text/javascript">
-                    function doStartMeSearch1() { window.open('https://securitytrails.com/blog/top-shodan-dorks', '_blank'); }
-                </script>
-                <form class="tool-form" onsubmit="doStartMeSearch1(); return false;">
-                    <input type="submit" value="Top 40 Shodan Dorks for Finding Sensitive IoT Data" style="width: 100%; white-space: normal;" />
-                </form>
-            </div>
-            <div class="tool-card">
-                <script type="text/javascript">
-                    function doStartMeSearch2() { window.open('https://github.com/cipher387/Dorks-collections-list/', '_blank'); }
-                </script>
-                <form class="tool-form" onsubmit="doStartMeSearch2(); return false;">
-                    <input type="submit" value="Dorks collections list" style="width: 100%; white-space: normal;" />
-                </form>
-            </div>
-            <div class="tool-card">
-                <script type="text/javascript">
-                    function doStartMeSearch3() { window.open('https://twitter.com/AseemShrey/status/1508059759491964928', '_blank'); }
-                </script>
-                <form class="tool-form" onsubmit="doStartMeSearch3(); return false;">
-                    <input type="submit" value="Top 7 #Shodan Dorks (Twitter Thread)" style="width: 100%; white-space: normal;" />
-                </form>
-            </div>
-            <div class="tool-card">
-                <script type="text/javascript">
-                    function doStartMeSearch4() { window.open('https://github.com/jakejarvis/awesome-shodan-queries', '_blank'); }
-                </script>
-                <form class="tool-form" onsubmit="doStartMeSearch4(); return false;">
-                    <input type="submit" value="awesom shodan queries" style="width: 100%; white-space: normal;" />
-                </form>
-            </div>
-            <div class="tool-card">
-                <script type="text/javascript">
-                    function doStartMeSearch5() { window.open('https://www.exploit-db.com/google-hacking-database', '_blank'); }
-                </script>
-                <form class="tool-form" onsubmit="doStartMeSearch5(); return false;">
-                    <input type="submit" value="Google Hacking Database" style="width: 100%; white-space: normal;" />
-                </form>
-            </div>
-            <div class="tool-card">
-                <script type="text/javascript">
-                    function doStartMeSearch6() { window.open('https://twitter.com/TakSec/status/1683175246801797120?s=09&t=zXvq-_nviPlMHAobDoXoqg', '_blank'); }
-                </script>
-                <form class="tool-form" onsubmit="doStartMeSearch6(); return false;">
-                    <input type="submit" value="Domain documents Dork" style="width: 100%; white-space: normal;" />
-                </form>
-            </div>        </div>
 
-    </main>
-</div>
+        </main>
+    </div>
 
-<script src="Files/search_data.js"></script>
-<script src="Files/search.js"></script>
+    <script src="Files/search_data.js"></script>
+    <script src="Files/search.js"></script>
 
     <script>
         function openAllStartMe() {
             const urls = ["https://github.com/0xAbbarhSF/Info-Sec-Dork-List/blob/main/hidden_files_dork.txt", "https://securitytrails.com/blog/top-shodan-dorks", "https://github.com/cipher387/Dorks-collections-list/", "https://twitter.com/AseemShrey/status/1508059759491964928", "https://github.com/jakejarvis/awesome-shodan-queries", "https://www.exploit-db.com/google-hacking-database", "https://twitter.com/TakSec/status/1683175246801797120?s=09&t=zXvq-_nviPlMHAobDoXoqg"];
-            urls.forEach(url => {
-                window.open(url, '_blank');
-            });
+            let i = 0;
+            function openNext() {
+                if (i < urls.length) {
+                    window.open(urls[i], '_blank');
+                    i++;
+                    setTimeout(openNext, 250); // Small delay to prevent browser blocking
+                }
+            }
+            openNext();
         }
     </script>
-            
+
 
     <script>
         function openAllStartMe() {
@@ -167,4 +180,5 @@
     </script>
             
 </body>
+
 </html>

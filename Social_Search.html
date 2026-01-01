@@ -52,7 +52,8 @@
             <li><a href="Hashes_to_Hashes.html">Hashes to Hashes</a></li>
             <li><a href="Malware_Related.html">Malware Related</a></li>
             <li><a href="Sandbox.html">Sandbox</a></li>
-            <li><a href="GoogleShodan_Dorks.html">Google/Shodan Dorks</a></li>
+            <li><a href="Dorks_Cheatsheets.html">Dorks Cheatsheets</a></li>
+            <li><a href="Shodan.html">Shodan</a></li>
             <li><a href="URLIP_Scan.html">URL/IP Scan</a></li>
             <li><a href="Social_Search.html" class="active">Social Search</a></li>
             <li><a href="Courses.html">Courses</a></li>
@@ -115,6 +116,38 @@
             urls.forEach(url => {
                 window.open(url, '_blank');
             });
+        }
+    </script>
+            
+
+    <script>
+        function openAllStartMe() {
+            const urls = ["https://waybien.com/en", "https://cse.google.com/cse?&cx=006368593537057042503:efxu7xprihg#gsc.tab=0", "https://www.social-searcher.com/"];
+            let i = 0;
+            function openNext() {
+                if (i < urls.length) {
+                    window.open(urls[i], '_blank');
+                    i++;
+                    setTimeout(openNext, 250); // Small delay to prevent browser blocking
+                }
+            }
+            openNext();
+        }
+    </script>
+            
+
+    <script>
+        function openAllStartMe() {
+            const urls = ["https://waybien.com/en", "https://cse.google.com/cse?&cx=006368593537057042503:efxu7xprihg#gsc.tab=0", "https://www.social-searcher.com/"];
+            let i = 0;
+            function openNext() {
+                if (i < urls.length) {
+                    window.open(urls[i], '_blank');
+                    i++;
+                    setTimeout(openNext, 250); // Small delay to prevent browser blocking
+                }
+            }
+            openNext();
         }
     </script>
             
