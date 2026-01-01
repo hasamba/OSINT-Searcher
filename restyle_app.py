@@ -54,10 +54,16 @@ SIDEBAR_ITEMS = [
     ("Search_Engines.html", "Search Engines"),
 ]
 
+ALL_TOOLS = []
+
 def generate_sidebar(active_file):
     html = '    <nav class="sidebar">\n'
     html += '        <div class="sidebar-header">\n'
     html += '            <h2>OSINT Searcher</h2>\n'
+    html += '        </div>\n'
+    html += '        <div class="search-container">\n'
+    html += '            <input type="text" id="global-search" placeholder="Find a tool..." class="search-input">\n'
+    html += '            <div id="search-results" class="search-results-modal"></div>\n'
     html += '        </div>\n'
     html += '        <ul class="nav-links">\n'
     
@@ -109,6 +115,18 @@ def process_file(filename):
         # Update Sidebar
         sidebar_content = generate_sidebar(filename)
         new_content = re.sub(r'<nav class="sidebar">[\s\S]*?</nav>', sidebar_content.strip(), new_content)
+        
+        # Index Tools in modernized file
+        tool_matches = re.finditer(r'<input type="submit" value="(.*?)"', new_content, re.IGNORECASE)
+        for tm in tool_matches:
+            tool_name = tm.group(1)
+            # Avoid duplicates if regex runs multiple times or similar
+            # For now, just append
+            ALL_TOOLS.append({"name": tool_name.replace('"', ''), "url": filename, "category": title})
+
+        # Inject Scripts if not present
+        if "Files/search_data.js" not in new_content:
+            new_content = new_content.replace('</body>', '<script src="Files/search_data.js"></script>\n<script src="Files/search.js"></script>\n</body>')
         
         with open(file_path, 'w', encoding='utf-8') as f:
             f.write(new_content)
@@ -173,6 +191,16 @@ def process_file(filename):
             card_html = f'            <div class="tool-card">\n{script}\n{form}\n            </div>\n'
             current_grid_items.append(card_html)
             
+            # Index Tool
+            try:
+                # Extract value="..."
+                val_match = re.search(r'value="(.*?)"', form, re.IGNORECASE)
+                if val_match:
+                    tool_name = val_match.group(1)
+                    ALL_TOOLS.append({"name": tool_name.replace('"', ''), "url": filename, "category": title})
+            except:
+                pass
+
             i += 3
         else:
             i += 1
@@ -207,6 +235,8 @@ def process_file(filename):
     </main>
 </div>
 
+<script src="Files/search_data.js"></script>
+<script src="Files/search.js"></script>
 </body>
 </html>"""
 
@@ -242,6 +272,12 @@ def main():
                  update_sidebar_only(f)
              else:
                  process_file(f)
+
+    # Write Index JS
+    index_js = "const SITE_TOOLS = " + str(ALL_TOOLS).replace("'", '"') + ";"
+    with open(os.path.join(TARGET_DIR, "Files/search_data.js"), 'w', encoding='utf-8') as f:
+        f.write(index_js)
+    print(f"Generated search index with {len(ALL_TOOLS)} tools.")
 
     # Handle index.html - Redirect to Search.html
     index_path = os.path.join(TARGET_DIR, "index.html")
