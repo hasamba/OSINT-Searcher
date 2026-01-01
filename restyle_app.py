@@ -52,7 +52,6 @@ SIDEBAR_ITEMS = [
     ("Phone_Number.html", "Phone Number"),
     ("Faces.html", "Faces"),
     ("Geolocation.html", "Geolocation"),
-    ("Search_Engines.html", "Search Engines"),
 ]
 
 ALL_TOOLS = []
@@ -122,7 +121,8 @@ def process_file(filename):
         new_content = re.sub(r'<nav class="sidebar">[\s\S]*?</nav>', sidebar_content.strip(), new_content)
         
         # Index Tools in modernized file
-        tool_matches = re.finditer(r'<input type="submit" value="(.*?)"', new_content, re.IGNORECASE)
+        # Regex handles flexible whitespace and potential other attributes (though we target value)
+        tool_matches = re.finditer(r'<input\s+type="submit"\s+(?:.*?\s+)?value="(.*?)"', new_content, re.IGNORECASE)
         for tm in tool_matches:
             tool_name = tm.group(1)
             # Avoid duplicates if regex runs multiple times or similar
@@ -260,7 +260,7 @@ def update_sidebar_only(filename):
     # Be careful with greedy matching if parsing is hard.
     # Assuming <nav class="sidebar"> is unique.
     
-    new_content = re.sub(r'<nav class="sidebar">[\s\S]*?</nav>', sidebar_content.strip(), content)
+    new_content = re.sub(r'<nav class="sidebar">[\s\S]*?</nav>', sidebar_content.strip(), new_content)
     
     with open(file_path, 'w', encoding='utf-8') as f:
         f.write(new_content)
