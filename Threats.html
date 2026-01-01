@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Threat Intelligence Tools</title>
+    <link rel="stylesheet" href="Files/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="app-container">
+        <!-- Sidebar -->
+        <nav class="sidebar">
+        <div class="sidebar-header">
+            <h2>OSINT Searcher</h2>
+        </div>
+        <ul class="nav-links">
+            <li><a href="Search.html">Search Engines</a></li>
+            <li><a href="Facebook.html">Facebook</a></li>
+            <li><a href="Twitter.html">X (Twitter)</a></li>
+            <li><a href="Instagram.html">Instagram</a></li>
+            <li><a href="LinkedIn.html">LinkedIn</a></li>
+            <li><a href="Communities.html">Communities</a></li>
+            <li><a href="Email.html">Email Addresses</a></li>
+            <li><a href="Username.html">Usernames</a></li>
+            <li><a href="Name.html">Names</a></li>
+            <li><a href="Address.html">Addresses</a></li>
+            <li><a href="Telephone.html">Telephone Numbers</a></li>
+            <li><a href="Location.html">Maps</a></li>
+            <li><a href="Documents.html">Documents</a></li>
+            <li><a href="Pastes.html">Pastes</a></li>
+            <li><a href="Images.html">Images</a></li>
+            <li><a href="Videos.html">Videos</a></li>
+            <li><a href="Domain.html">Domains</a></li>
+            <li><a href="IP.html">IP Addresses</a></li>
+            <li><a href="Business.html">Business & Gov</a></li>
+            <li><a href="Vehicle.html">Vehicles</a></li>
+            <li><a href="Currencies.html">Virtual Currencies</a></li>
+            <li><a href="Breaches.html">Data Breaches</a></li>
+            <li><a href="Threats.html" class="active">Threat Intelligence</a></li>
+            <li><a href="Radio.html">Live Audio</a></li>
+            <li><a href="Video.html">Live Video</a></li>
+            <li><a href="API.html">APIs</a></li>
+            <li><a href="License.html">License</a></li>
+        </ul>
+    </nav>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="main-header">
+                <h1>Threat Intelligences</h1>
+            </div>
+            <div class="tools-grid">
+                <div class="tool-card">
+                    <script type="text/javascript">
+                        function doSearch01(Search01) { window.open('https://urlscan.io/search/#' + Search01, 'Search01window'); }
+                    </script>
+                    <form class="tool-form" onsubmit="doSearch01(this.Search01.value); return false;">
+                        <input type="text" id="Search01" name="Search01" placeholder="Domain / URL" />
+                        <input type="submit" value="urlscan.io" />
+                    </form>
+                </div>
+                <div class="tool-card">
+                    <script type="text/javascript">
+                        function doSearch02(Search02) { window.open('https://www.virustotal.com/gui/search/' + Search02, 'Search02window'); }
+                    </script>
+                    <form class="tool-form" onsubmit="doSearch02(this.Search02.value); return false;">
+                        <input type="text" id="Search02" name="Search02" placeholder="URL / Hash / IP" />
+                        <input type="submit" value="VirusTotal" />
+                    </form>
+                </div>
+                <div class="tool-card">
+                    <script type="text/javascript">
+                        function doSearch03(Search03) { window.open('https://app.any.run/submissions/', 'Search03window'); }
+                    </script>
+                    <form class="tool-form" onsubmit="doSearch03(this.Search03.value); return false;">
+                        <input type="text" id="Search03" name="Search03" placeholder="Click to Open" />
+                        <input type="submit" value="Any.Run" />
+                    </form>
+                </div>
+                <div class="tool-card">
+                    <script type="text/javascript">
+                        function doSearch04(Search04) { window.open('https://www.phishtank.com/site/' + Search04, 'Search04window'); }
+                    </script>
+                    <form class="tool-form" onsubmit="doSearch04(this.Search04.value); return false;">
+                        <input type="text" id="Search04" name="Search04" placeholder="Phish ID / URL" />
+                        <input type="submit" value="PhishTank" />
+                    </form>
+                </div>
+                <div class="tool-card">
+                    <script type="text/javascript">
+                        function doSearch05(Search05) { window.open('https://www.abuseipdb.com/check/' + Search05, 'Search05window'); }
+                    </script>
+                    <form class="tool-form" onsubmit="doSearch05(this.Search05.value); return false;">
+                        <input type="text" id="Search05" name="Search05" placeholder="IP Address" />
+                        <input type="submit" value="AbuseIPDB" />
+                    </form>
+                </div>
+                <div class="tool-card">
+                    <script type="text/javascript">
+                        function doSearch06(Search06) { window.open('https://www.urlvoid.com/scan/' + Search06, 'Search06window'); }
+                    </script>
+                    <form class="tool-form" onsubmit="doSearch06(this.Search06.value); return false;">
+                        <input type="text" id="Search06" name="Search06" placeholder="Domain" />
+                        <input type="submit" value="URLVoid" />
+                    </form>
+                </div>
+                <div class="tool-card">
+                    <script type="text/javascript">
+                        function doSearch07(Search07) { window.open('https://www.hybrid-analysis.com/', 'Search07window'); }
+                    </script>
+                    <form class="tool-form" onsubmit="doSearch07(this.Search07.value); return false;">
+                        <input type="text" id="Search07" name="Search07" placeholder="Click to Open" />
+                        <input type="submit" value="Hybrid Analysis" />
+                    </form>
+                </div>
+                <div class="tool-card">
+                    <script type="text/javascript">
+                        function doSearch08(Search08) { window.open('https://sitecheck.sucuri.net/results/' + Search08, 'Search08window'); }
+                    </script>
+                    <form class="tool-form" onsubmit="doSearch08(this.Search08.value); return false;">
+                        <input type="text" id="Search08" name="Search08" placeholder="Domain" />
+                        <input type="submit" value="Sucuri SiteCheck" />
+                    </form>
+                </div>
+            </div>
+        </main>
+    </div>
+
+</body>
+
+</html>

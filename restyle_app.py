@@ -27,6 +27,7 @@ SIDEBAR_ITEMS = [
     ("Vehicle.html", "Vehicles"),
     ("Currencies.html", "Virtual Currencies"),
     ("Breaches.html", "Data Breaches"),
+    ("Threats.html", "Threat Intelligence"),
     ("Radio.html", "Live Audio"),
     ("Video.html", "Live Video"),
     ("API.html", "APIs"),

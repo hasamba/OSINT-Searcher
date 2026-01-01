@@ -42,6 +42,7 @@
             <li><a href="Vehicle.html">Vehicles</a></li>
             <li><a href="Currencies.html">Virtual Currencies</a></li>
             <li><a href="Breaches.html">Data Breaches</a></li>
+            <li><a href="Threats.html">Threat Intelligence</a></li>
             <li><a href="Radio.html">Live Audio</a></li>
             <li><a href="Video.html">Live Video</a></li>
             <li><a href="API.html">APIs</a></li>
@@ -421,6 +422,39 @@
                     <form onsubmit="doSearch25(this.Search25.value); return false;" class="tool-form">
                         <input type="text" name="Search25" id="Search25" placeholder="Username" />
                         <input type="submit" value="Email Search" />
+                    </form>
+                </div>
+
+                <!-- WhatsMyName -->
+                <div class="tool-card">
+                    <script type="text/javascript">
+                        function doSearchWMN(SearchWMN) { window.open('https://whatsmyname.app/?q=' + SearchWMN, 'SearchWMNwindow'); }
+                    </script>
+                    <form onsubmit="doSearchWMN(this.SearchWMN.value); return false;" class="tool-form">
+                        <input type="text" id="SearchWMN" name="SearchWMN" placeholder="Username" />
+                        <input type="submit" value="WhatsMyName" />
+                    </form>
+                </div>
+
+                <!-- Sherlock -->
+                <div class="tool-card">
+                    <script type="text/javascript">
+                        function doSearchSherlock(SearchSherlock) { window.open('https://github.com/sherlock-project/sherlock', 'SearchSherlockwindow'); }
+                    </script>
+                    <form onsubmit="doSearchSherlock(this.SearchSherlock.value); return false;" class="tool-form">
+                        <input type="text" id="SearchSherlock" name="SearchSherlock" placeholder="Open Repo" />
+                        <input type="submit" value="Sherlock" />
+                    </form>
+                </div>
+
+                <!-- Maigret -->
+                <div class="tool-card">
+                    <script type="text/javascript">
+                        function doSearchMaigret(SearchMaigret) { window.open('https://web.telegram.org/k/#@osint_maigret_bot', 'SearchMaigretwindow'); }
+                    </script>
+                    <form onsubmit="doSearchMaigret(this.SearchMaigret.value); return false;" class="tool-form">
+                        <input type="text" id="SearchMaigret" name="SearchMaigret" placeholder="Open Bot" />
+                        <input type="submit" value="Maigret Bot" />
                     </form>
                 </div>
 

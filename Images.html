@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,11 +10,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
-<div class="app-container">
-    <!-- Sidebar -->
-    <nav class="sidebar">
+    <div class="app-container">
+        <!-- Sidebar -->
+        <nav class="sidebar">
         <div class="sidebar-header">
             <h2>OSINT Searcher</h2>
         </div>
@@ -40,6 +42,7 @@
             <li><a href="Vehicle.html">Vehicles</a></li>
             <li><a href="Currencies.html">Virtual Currencies</a></li>
             <li><a href="Breaches.html">Data Breaches</a></li>
+            <li><a href="Threats.html">Threat Intelligence</a></li>
             <li><a href="Radio.html">Live Audio</a></li>
             <li><a href="Video.html">Live Video</a></li>
             <li><a href="API.html">APIs</a></li>
@@ -47,245 +50,271 @@
         </ul>
     </nav>
 
-    <!-- Main Content -->
-    <main class="main-content">
-        <div class="main-header">
-            <h1>Images</h1>
-        </div>
-        <div class="mb-4 text-center">Reverse Image Search:</div>
-        <div class="tools-grid">
-            <div class="tool-card">
-<script type="text/javascript">
-function doSearch01(Search01)
-{window.open('https://www.google.com/searchbyimage?image_url=' + Search01 + '&client=app', 'Search01window');}
-</script>
-<form class="tool-form" onsubmit="doSearch01(this.Search01.value); return false;">
-<input type="text" name="Search01"  placeholder="Entire Image URL" />
-<input type="submit"  value="Google Images" /></form>
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="main-header">
+                <h1>Images</h1>
             </div>
-            <div class="tool-card">
-<script type="text/javascript">
-function doSearch01a(Search01a)
-{window.open('https://lens.google.com/uploadbyurl?url=' + Search01a, 'Search01awindow');}
-</script>
-<form class="tool-form" onsubmit="doSearch01a(this.Search01a.value); return false;">
-<input type="text" name="Search01a"  placeholder="Entire Image URL" />
-<input type="submit"  value="Google Lens" /></form>
+            <div class="mb-4 text-center">Reverse Image Search:</div>
+            <div class="tools-grid">
+                <div class="tool-card">
+                    <script type="text/javascript">
+                        function doSearch01(Search01) { window.open('https://www.google.com/searchbyimage?image_url=' + Search01 + '&client=app', 'Search01window'); }
+                    </script>
+                    <form class="tool-form" onsubmit="doSearch01(this.Search01.value); return false;">
+                        <input type="text" name="Search01" placeholder="Entire Image URL" />
+                        <input type="submit" value="Google Images" />
+                    </form>
+                </div>
+                <div class="tool-card">
+                    <script type="text/javascript">
+                        function doSearch01a(Search01a) { window.open('https://lens.google.com/uploadbyurl?url=' + Search01a, 'Search01awindow'); }
+                    </script>
+                    <form class="tool-form" onsubmit="doSearch01a(this.Search01a.value); return false;">
+                        <input type="text" name="Search01a" placeholder="Entire Image URL" />
+                        <input type="submit" value="Google Lens" />
+                    </form>
+                </div>
+                <div class="tool-card">
+                    <script type="text/javascript">
+                        function doSearch02(Search02) { window.open('https://www.bing.com/images/search?view=detailv2&iss=sbi&q=imgurl:' + Search02, 'Search02window'); }
+                    </script>
+                    <form class="tool-form" onsubmit="doSearch02(this.Search02.value); return false;">
+                        <input type="text" name="Search02" placeholder="Entire Image URL" />
+                        <input type="submit" value="Bing" />
+                    </form>
+                </div>
+                <div class="tool-card">
+                    <script type="text/javascript">
+                        function doSearch03(Search03) { window.open('http://www.tineye.com/search/?url=' + Search03, 'Search03window'); }
+                    </script>
+                    <form class="tool-form" onsubmit="doSearch03(this.Search03.value); return false;">
+                        <input type="text" name="Search03" placeholder="Entire Image URL" />
+                        <input type="submit" value="TinEye" />
+                    </form>
+                </div>
+                <div class="tool-card">
+                    <script type="text/javascript">
+                        function doSearch04(Search04) { window.open('https://yandex.com/images/search?rpt=imageview&url=' + Search04, 'Search04window'); }
+                    </script>
+                    <form class="tool-form" onsubmit="doSearch04(this.Search04.value); return false;">
+                        <input type="text" name="Search04" placeholder="Entire Image URL" />
+                        <input type="submit" value="Yandex" />
+                    </form>
+                </div>
+                <div class="tool-card">
+                    <script type="text/javascript">
+                        function doSearch05(Search05) { window.open('https://facecheck.id/#url=' + Search05, 'Search05window'); }
+                    </script>
+                    <form class="tool-form" onsubmit="doSearch05(this.Search05.value); return false;">
+                        <input type="text" name="Search05" placeholder="Entire Image URL" />
+                        <input type="submit" value="FaceCheck" />
+                    </form>
+                </div>
+                <div class="tool-card">
+                    <script type="text/javascript">
+                        function doSearch06(Search06) { window.open('https://www.repostsleuth.com/search?url=' + Search06, 'Search06window'); }
+                    </script>
+                    <form class="tool-form" onsubmit="doSearch06(this.Search06.value); return false;">
+                        <input type="text" name="Search06" placeholder="Entire Image URL" />
+                        <input type="submit" value="Repost Sleuth" />
+                    </form>
+                </div>
+                <div class="tool-card">
+                    <script type="text/javascript">
+                        function doSearchNewImg01(SearchNewImg01) { window.open('https://pimeyes.com/en', 'SearchNewImg01window'); }
+                    </script>
+                    <form class="tool-form" onsubmit="doSearchNewImg01(this.SearchNewImg01.value); return false;">
+                        <input type="text" id="SearchNewImg01" name="SearchNewImg01" placeholder="Open Site" />
+                        <input type="submit" value="PimEyes" />
+                    </form>
+                </div>
+                <div class="tool-card">
+                    <script type="text/javascript">
+                        function doSearchNewImg02(SearchNewImg02) { window.open('https://geospy.ai/', 'SearchNewImg02window'); }
+                    </script>
+                    <form class="tool-form" onsubmit="doSearchNewImg02(this.SearchNewImg02.value); return false;">
+                        <input type="text" id="SearchNewImg02" name="SearchNewImg02" placeholder="Open Site" />
+                        <input type="submit" value="GeoSpy AI" />
+                    </form>
+                </div>
+                <div class="tool-card">
+                    <script type="text/javascript">
+                        function doimage(image) {
+                            window.open('https://www.google.com/searchbyimage?image_url=' + image + '&client=app', 'image1window');
+                            window.open('https://lens.google.com/uploadbyurl?url=' + image, 'image1awindow');
+                            window.open('https://www.bing.com/images/search?view=detailv2&iss=sbi&q=imgurl:' + image, 'image2window');
+                            window.open('http://www.tineye.com/search/?url=' + image, 'image3window');
+                            window.open('https://yandex.com/images/search?rpt=imageview&url=' + image, 'image4window');
+                            window.open('https://facecheck.id/#url=' + image, 'image5window');
+                            window.open('https://www.repostsleuth.com/search?url=' + image, 'image6window');
+                        }
+                    </script>
+                    <form class="tool-form" onsubmit="doimage(this.image.value); return false;">
+                        <input type="text" name="image" placeholder="Entire Image URL" />
+                        <input type="submit" value="Submit All" /><br>
+                    </form>
+                </div>
             </div>
-            <div class="tool-card">
-<script type="text/javascript">
-function doSearch02(Search02)
-{window.open('https://www.bing.com/images/search?view=detailv2&iss=sbi&q=imgurl:' + Search02, 'Search02window');}
-</script>
-<form class="tool-form" onsubmit="doSearch02(this.Search02.value); return false;">
-<input type="text" name="Search02"  placeholder="Entire Image URL" />
-<input type="submit"  value="Bing" /></form>
+            <div class="mb-4 text-center">Images Search:</div>
+            <div class="tools-grid">
+                <div class="tool-card">
+                    <script type="text/javascript">
+                        function doPopAll(PopAll) {
+                            var pop = document.getElementById("PopAll");
+                            for (j = 1; j <= 100; j++) {
+                                if (j < 10) {
+                                    j = "0" + j.toString();
+                                }
+                                else { j = j.toString(); }
+                                console.log(j)
+                                item = document.getElementById("Search" + j);
+                                if (item != null) {
+                                    item.value = pop.value;
+                                }
+                            }
+                        }
+                    </script>
+                    <form class="tool-form" onsubmit="doPopAll(this.PopAll.value); return false;">
+                        <input type="text" id="PopAll" name="PopAll" placeholder="Search Terms" />
+                        <input type="submit" value="Populate All" />
+                    </form>
+                </div>
+                <div class="tool-card">
+                    <script type="text/javascript">
+                        function doSearch07(Search07) { window.open('https://www.google.com/search?q=' + Search07 + '&tbm=isch', 'Search07window'); }
+                    </script>
+                    <form class="tool-form" onsubmit="doSearch07(this.Search07.value); return false;">
+                        <input type="text" id="Search07" name="Search07" placeholder="Search Terms" />
+                        <input type="submit" value="Google Images" />
+                    </form>
+                </div>
+                <div class="tool-card">
+                    <script type="text/javascript">
+                        function doSearch08(Search08) { window.open('https://www.bing.com/images/search?q=' + Search08, 'Search08window'); }
+                    </script>
+                    <form class="tool-form" onsubmit="doSearch08(this.Search08.value); return false;">
+                        <input type="text" id="Search08" name="Search08" placeholder="Search Terms" />
+                        <input type="submit" value="Bing Images" />
+                    </form>
+                </div>
+                <div class="tool-card">
+                    <script type="text/javascript">
+                        function doSearch09(Search09) { window.open('https://yandex.com/images/search?text=' + Search09, 'Search09window'); }
+                    </script>
+                    <form class="tool-form" onsubmit="doSearch09(this.Search09.value); return false;">
+                        <input type="text" id="Search09" name="Search09" placeholder="Search Terms" />
+                        <input type="submit" value="Yandex Images" />
+                    </form>
+                </div>
+                <div class="tool-card">
+                    <script type="text/javascript">
+                        function doSearch10(Search10) { window.open('https://twitter.com/search?q=' + Search10 + '&f=media', 'Search10window'); }
+                    </script>
+                    <form class="tool-form" onsubmit="doSearch10(this.Search10.value); return false;">
+                        <input type="text" id="Search10" name="Search10" placeholder="Search Terms" />
+                        <input type="submit" value="Twitter Images" />
+                    </form>
+                </div>
+                <div class="tool-card">
+                    <script type="text/javascript">
+                        function doSearch11(Search11) { window.open('https://www.facebook.com/search/photos/?q=' + Search11, 'Search11window'); }
+                    </script>
+                    <form class="tool-form" onsubmit="doSearch11(this.Search11.value); return false;">
+                        <input type="text" id="Search11" name="Search11" placeholder="Search Terms" />
+                        <input type="submit" value="Facebook Images" />
+                    </form>
+                </div>
+                <div class="tool-card">
+                    <script type="text/javascript">
+                        function doSearch12(Search12) { window.open('https://www.google.com/search?tbm=isch&q=site%3Ainstagram.com+' + Search12, 'Search12window'); }
+                    </script>
+                    <form class="tool-form" onsubmit="doSearch12(this.Search12.value); return false;">
+                        <input type="text" id="Search12" name="Search12" placeholder="Search Terms" value="" />
+                        <input type="submit" value="Instagram Images" />
+                    </form>
+                </div>
+                <div class="tool-card">
+                    <script type="text/javascript">
+                        function doSearch13(Search13) { window.open('https://www.google.com/search?tbm=isch&q=site%3Alinkedin.com+' + Search13, 'Search13window'); }
+                    </script>
+                    <form class="tool-form" onsubmit="doSearch13(this.Search13.value); return false;">
+                        <input type="text" id="Search13" name="Search13" placeholder="Search Terms" value="" />
+                        <input type="submit" value="LinkedIn Images" />
+                    </form>
+                </div>
+                <div class="tool-card">
+                    <script type="text/javascript">
+                        function doSearch14(Search14) { window.open('https://www.flickr.com/search/?text=' + Search14, 'Search14window'); }
+                    </script>
+                    <form class="tool-form" onsubmit="doSearch14(this.Search14.value); return false;">
+                        <input type="text" id="Search14" name="Search14" placeholder="Search Terms" />
+                        <input type="submit" value="Flickr Images" />
+                    </form>
+                </div>
+                <div class="tool-card">
+                    <script type="text/javascript">
+                        function doSearch15(Search15) { window.open('https://www.tumblr.com/search/' + Search15, 'Search15window'); }
+                    </script>
+                    <form class="tool-form" onsubmit="doSearch15(this.Search15.value); return false;">
+                        <input type="text" id="Search15" name="Search15" placeholder="Search Terms" />
+                        <input type="submit" value="Tumblr Images" />
+                    </form>
+                </div>
+                <div class="tool-card">
+                    <script type="text/javascript">
+                        function doSearch16(Search16) {
+                            window.open('https://www.google.com/search?q=' + Search16 + '&tbm=isch', 'image1window');
+                            window.open('https://www.bing.com/images/search?q=' + Search16, 'image2window');
+                            window.open('https://yandex.com/images/search?text=' + Search16, 'image3window');
+                            window.open('https://twitter.com/search?f=media&q=' + Search16, 'image4window');
+                            window.open('https://www.facebook.com/search/photos/?q=' + Search16, 'image5window');
+                            window.open('https://www.google.com/search?tbm=isch&q=site%3Ainstagram.com+' + Search16, 'image6window');
+                            window.open('https://www.google.com/search?tbm=isch&q=site%3Alinkedin.com+' + Search16, 'image7window');
+                            window.open('https://www.flickr.com/search/?text=' + Search16, 'image8window');
+                            window.open('https://www.tumblr.com/search/' + Search16, 'Search9window');
+                        }
+                    </script>
+                    <form class="tool-form" onsubmit="doSearch16(this.Search16.value); return false;">
+                        <input type="text" id="Search16" name="Search16" placeholder="Search Terms" />
+                        <input type="submit" value="Submit All" /><br>
+                    </form>
+                </div>
             </div>
-            <div class="tool-card">
-<script type="text/javascript">
-function doSearch03(Search03)
-{window.open('http://www.tineye.com/search/?url=' + Search03, 'Search03window');}
-</script>
-<form class="tool-form" onsubmit="doSearch03(this.Search03.value); return false;">
-<input type="text" name="Search03"  placeholder="Entire Image URL" />
-<input type="submit"  value="TinEye" /></form>
+            <div class="mb-4 text-center">Flickr API:</div>
+            <div class="tools-grid">
+                <div class="tool-card">
+                    <script type="text/javascript">
+                        function doflemail(flemail) { window.open('https://api.flickr.com/services/rest/?method=flickr.people.findByEmail&api_key=27c196593dad58382fc4912b00cf1194&find_email=' + flemail, 'flickremailwindow'); }
+                    </script>
+                    <form class="tool-form" onSubmit="doflemail(this.flemail.value); return false;">
+                        <input name="flemail" placeholder="Email Address" type="text" />
+                        <input type="submit" value="Email Search" />
+                    </form>
+                </div>
+                <div class="tool-card">
+                    <script type="text/javascript">
+                        function dofluser(fluser) { window.open('https://api.flickr.com/services/rest/?method=flickr.people.findByUsername&api_key=27c196593dad58382fc4912b00cf1194&username=' + fluser, 'flickruserwindow'); }
+                    </script>
+                    <form class="tool-form" onSubmit="dofluser(this.fluser.value); return false;">
+                        <input name="fluser" placeholder="Username" type="text" />
+                        <input type="submit" value="Username Search" />
+                    </form>
+                </div>
+                <div class="tool-card">
+                    <script type="text/javascript">
+                        function doflnumber(flnumber) { window.open('https://api.flickr.com/services/rest/?method=flickr.people.getInfo&api_key=27c196593dad58382fc4912b00cf1194&user_id=' + flnumber + '&format=rest', 'flickrnumberwindow'); }
+                    </script>
+                    <form class="tool-form" onSubmit="doflnumber(this.flnumber.value); return false;">
+                        <input name="flnumber" placeholder="User Number" type="text" />
+                        <input type="submit" value="User # Search" />
+                    </form>
+                </div>
             </div>
-            <div class="tool-card">
-<script type="text/javascript">
-function doSearch04(Search04)
-{window.open('https://yandex.com/images/search?rpt=imageview&url=' + Search04, 'Search04window');}
-</script>
-<form class="tool-form" onsubmit="doSearch04(this.Search04.value); return false;">
-<input type="text" name="Search04"  placeholder="Entire Image URL" />
-<input type="submit"  value="Yandex" /></form>
-            </div>
-            <div class="tool-card">
-<script type="text/javascript">
-function doSearch05(Search05)
-{window.open('https://facecheck.id/#url=' + Search05, 'Search05window');}
-</script>
-<form class="tool-form" onsubmit="doSearch05(this.Search05.value); return false;">
-<input type="text" name="Search05"  placeholder="Entire Image URL" />
-<input type="submit"  value="FaceCheck"/></form>
-            </div>
-            <div class="tool-card">
-<script type="text/javascript">
-function doSearch06(Search06)
-{window.open('https://www.repostsleuth.com/search?url=' + Search06, 'Search06window');}
-</script>
-<form class="tool-form" onsubmit="doSearch06(this.Search06.value); return false;">
-<input type="text" name="Search06"  placeholder="Entire Image URL" />
-<input type="submit"  value="Repost Sleuth"/></form>
-            </div>
-            <div class="tool-card">
-<script type="text/javascript">
-function doimage(image)
-{
-window.open('https://www.google.com/searchbyimage?image_url=' + image + '&client=app', 'image1window');
-window.open('https://lens.google.com/uploadbyurl?url=' + image, 'image1awindow');
-window.open('https://www.bing.com/images/search?view=detailv2&iss=sbi&q=imgurl:' + image, 'image2window');
-window.open('http://www.tineye.com/search/?url=' + image, 'image3window');
-window.open('https://yandex.com/images/search?rpt=imageview&url=' + image, 'image4window');
-window.open('https://facecheck.id/#url=' + image, 'image5window');
-window.open('https://www.repostsleuth.com/search?url=' + image, 'image6window');
-}
-</script>
-<form class="tool-form" onsubmit="doimage(this.image.value); return false;">
-<input type="text" name="image"  placeholder="Entire Image URL" />
-<input type="submit" value="Submit All" /><br></form>
-            </div>
-        </div>
-        <div class="mb-4 text-center">Images Search:</div>
-        <div class="tools-grid">
-            <div class="tool-card">
-<script type="text/javascript">
-function doPopAll(PopAll)
-{var pop = document.getElementById("PopAll");
-for (j = 1; j <= 100; j++){
-if (j < 10){
-j = "0" + j.toString();}
-else {j = j.toString();}
-console.log(j)
-item = document.getElementById("Search" + j);
-if (item != null){
-item.value = pop.value;}}}
-</script>
-<form class="tool-form" onsubmit="doPopAll(this.PopAll.value); return false;">
-<input type="text" id="PopAll" name="PopAll"  placeholder="Search Terms"/>
-<input type="submit"  value="Populate All" /></form>
-            </div>
-            <div class="tool-card">
-<script type="text/javascript">
-function doSearch07(Search07)
-{window.open('https://www.google.com/search?q=' + Search07 + '&tbm=isch', 'Search07window');}
-</script>
-<form class="tool-form" onsubmit="doSearch07(this.Search07.value); return false;">
-<input type="text" id="Search07" name="Search07"  placeholder="Search Terms" />
-<input type="submit"  value="Google Images"/></form>
-            </div>
-            <div class="tool-card">
-<script type="text/javascript">
-function doSearch08(Search08)
-{window.open('https://www.bing.com/images/search?q=' + Search08, 'Search08window');}
-</script>
-<form class="tool-form" onsubmit="doSearch08(this.Search08.value); return false;">
-<input type="text" id="Search08" name="Search08"  placeholder="Search Terms" />
-<input type="submit"  value="Bing Images"/></form>
-            </div>
-            <div class="tool-card">
-<script type="text/javascript">
-function doSearch09(Search09)
-{window.open('https://yandex.com/images/search?text=' + Search09, 'Search09window');}
-</script>
-<form class="tool-form" onsubmit="doSearch09(this.Search09.value); return false;">
-<input type="text" id="Search09" name="Search09"  placeholder="Search Terms" />
-<input type="submit"  value="Yandex Images"/></form>
-            </div>
-            <div class="tool-card">
-<script type="text/javascript">
-function doSearch10(Search10)
-{window.open('https://twitter.com/search?q=' + Search10 + '&f=media', 'Search10window');}
-</script>
-<form class="tool-form" onsubmit="doSearch10(this.Search10.value); return false;">
-<input type="text" id="Search10" name="Search10"  placeholder="Search Terms" />
-<input type="submit"  value="Twitter Images"/></form>
-            </div>
-            <div class="tool-card">
-<script type="text/javascript">
-function doSearch11(Search11)
-{window.open('https://www.facebook.com/search/photos/?q=' + Search11, 'Search11window');}
-</script>
-<form class="tool-form" onsubmit="doSearch11(this.Search11.value); return false;">
-<input type="text" id="Search11" name="Search11"  placeholder="Search Terms" />
-<input type="submit"  value="Facebook Images"/></form>
-            </div>
-            <div class="tool-card">
-<script type="text/javascript">
-function doSearch12(Search12)
-{window.open('https://www.google.com/search?tbm=isch&q=site%3Ainstagram.com+' + Search12, 'Search12window');}
-</script>
-<form class="tool-form" onsubmit="doSearch12(this.Search12.value); return false;">
-<input type="text" id="Search12" name="Search12"  placeholder="Search Terms" value="" />
-<input type="submit"  value="Instagram Images" /></form>
-            </div>
-            <div class="tool-card">
-<script type="text/javascript">
-function doSearch13(Search13)
-{window.open('https://www.google.com/search?tbm=isch&q=site%3Alinkedin.com+' + Search13, 'Search13window');}
-</script>
-<form class="tool-form" onsubmit="doSearch13(this.Search13.value); return false;">
-<input type="text" id="Search13" name="Search13"  placeholder="Search Terms" value="" />
-<input type="submit"  value="LinkedIn Images" /></form>
-            </div>
-            <div class="tool-card">
-<script type="text/javascript">
-function doSearch14(Search14)
-{window.open('https://www.flickr.com/search/?text=' + Search14, 'Search14window');}
-</script>
-<form class="tool-form" onsubmit="doSearch14(this.Search14.value); return false;">
-<input type="text" id="Search14" name="Search14"  placeholder="Search Terms" />
-<input type="submit"  value="Flickr Images"/></form>
-            </div>
-            <div class="tool-card">
-<script type="text/javascript">
-function doSearch15(Search15)
-{window.open('https://www.tumblr.com/search/' + Search15, 'Search15window');}
-</script>
-<form class="tool-form" onsubmit="doSearch15(this.Search15.value); return false;">
-<input type="text" id="Search15" name="Search15"  placeholder="Search Terms" />
-<input type="submit"  value="Tumblr Images"/></form>
-            </div>
-            <div class="tool-card">
-<script type="text/javascript">
-function doSearch16(Search16)
-{window.open('https://www.google.com/search?q=' + Search16 + '&tbm=isch', 'image1window');
-window.open('https://www.bing.com/images/search?q=' + Search16, 'image2window');
-window.open('https://yandex.com/images/search?text=' + Search16, 'image3window');
-window.open('https://twitter.com/search?f=media&q=' + Search16, 'image4window');
-window.open('https://www.facebook.com/search/photos/?q=' + Search16, 'image5window');
-window.open('https://www.google.com/search?tbm=isch&q=site%3Ainstagram.com+' + Search16, 'image6window');
-window.open('https://www.google.com/search?tbm=isch&q=site%3Alinkedin.com+' + Search16, 'image7window');
-window.open('https://www.flickr.com/search/?text=' + Search16, 'image8window');
-window.open('https://www.tumblr.com/search/' + Search16, 'Search9window');}
-</script>
-<form class="tool-form" onsubmit="doSearch16(this.Search16.value); return false;">
-<input type="text" id="Search16" name="Search16"  placeholder="Search Terms" />
-<input type="submit" value="Submit All" /><br></form>
-            </div>
-        </div>
-        <div class="mb-4 text-center">Flickr API:</div>
-        <div class="tools-grid">
-            <div class="tool-card">
-<script type="text/javascript">
-function doflemail(flemail)
-{window.open('https://api.flickr.com/services/rest/?method=flickr.people.findByEmail&api_key=27c196593dad58382fc4912b00cf1194&find_email=' + flemail, 'flickremailwindow');}
-</script>
-<form class="tool-form" onSubmit="doflemail(this.flemail.value); return false;">
-<input name="flemail"  placeholder="Email Address" type="text" />
-<input type="submit"  value="Email Search"/></form>
-            </div>
-            <div class="tool-card">
-<script type="text/javascript">
-function dofluser(fluser)
-{window.open('https://api.flickr.com/services/rest/?method=flickr.people.findByUsername&api_key=27c196593dad58382fc4912b00cf1194&username=' + fluser, 'flickruserwindow');}
-</script>
-<form class="tool-form" onSubmit="dofluser(this.fluser.value); return false;">
-<input name="fluser"  placeholder="Username" type="text" />
-<input type="submit"  value="Username Search"/></form>
-            </div>
-            <div class="tool-card">
-<script type="text/javascript">
-function doflnumber(flnumber)
-{window.open('https://api.flickr.com/services/rest/?method=flickr.people.getInfo&api_key=27c196593dad58382fc4912b00cf1194&user_id=' + flnumber + '&format=rest', 'flickrnumberwindow');}
-</script>
-<form class="tool-form" onSubmit="doflnumber(this.flnumber.value); return false;">
-<input name="flnumber"  placeholder="User Number" type="text" />
-<input type="submit"  value="User # Search"/></form>
-            </div>
-        </div>
 
-    </main>
-</div>
+        </main>
+    </div>
 
 </body>
+
 </html>
