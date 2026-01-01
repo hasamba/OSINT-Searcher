@@ -354,5 +354,21 @@
         }
     </script>
             
+
+    <script>
+        function openAllStartMe() {
+            const urls = ["https://falcon.crowdstrike.com/intelligence/sandbox", "https://tria.ge/", "https://cuckoo.cert.ee/dashboard/", "https://any.run/", "https://www.joesandbox.com/#windows", "https://opentip.kaspersky.com/#search/"];
+            let i = 0;
+            function openNext() {
+                if (i < urls.length) {
+                    window.open(urls[i], '_blank');
+                    i++;
+                    setTimeout(openNext, 250); // Small delay to prevent browser blocking
+                }
+            }
+            openNext();
+        }
+    </script>
+            
 </body>
 </html>

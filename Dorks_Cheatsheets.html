@@ -342,6 +342,22 @@
         }
     </script>
             
+
+    <script>
+        function openAllStartMe() {
+            const urls = ["https://github.com/0xAbbarhSF/Info-Sec-Dork-List/blob/main/hidden_files_dork.txt", "https://securitytrails.com/blog/top-shodan-dorks", "https://github.com/cipher387/Dorks-collections-list/", "https://twitter.com/AseemShrey/status/1508059759491964928", "https://github.com/jakejarvis/awesome-shodan-queries", "https://www.exploit-db.com/google-hacking-database", "https://twitter.com/TakSec/status/1683175246801797120?s=09&t=zXvq-_nviPlMHAobDoXoqg"];
+            let i = 0;
+            function openNext() {
+                if (i < urls.length) {
+                    window.open(urls[i], '_blank');
+                    i++;
+                    setTimeout(openNext, 250); // Small delay to prevent browser blocking
+                }
+            }
+            openNext();
+        }
+    </script>
+            
 </body>
 
 </html>

@@ -141,7 +141,27 @@ def process_file(filename):
         # Inject Scripts if not present
         if "Files/search_data.js" not in new_content:
             new_content = new_content.replace('</body>', '<script src="Files/search_data.js"></script>\n<script src="Files/search.js"></script>\n</body>')
+
+        # --- Move "Populate All" to Top ---
+        # Look for the card containing "Populate All"
+        # Using a regex that captures the tool-card div
+        # We need to be careful about nested divs, but tool-card structure is usually simple
         
+        pop_all_pattern = re.compile(r'(<div class="tool-card">\s*<script[^>]*>.*?doPopAll.*?</script>.*?<form.*?value="Populate All".*?</form>\s*</div>)', re.DOTALL | re.IGNORECASE)
+        pop_match = pop_all_pattern.search(new_content)
+        
+        if pop_match:
+            pop_card = pop_match.group(1)
+            # Remove from original location
+            new_content = new_content.replace(pop_card, "")
+            
+            # Insert after Main Header
+            # Find <h1>...</h1></div>
+            # We want to insert it in a full-width container
+            pop_html = f'<div class="full-width-tool" style="margin-bottom: 20px;">{pop_card}</div>'
+            new_content = re.sub(r'(<div class="main-header">.*?</div>)', f'\\1\n{pop_html}', new_content, flags=re.DOTALL)
+            print(f"Moved Populate All for {filename}")
+
         # --- StartMe Detection for Modernized Files ---
         # We need to scan new_content for doStartMeSearch
         url_matches = re.findall(r"window\.open\('([^']+)'", new_content)
