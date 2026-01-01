@@ -55,12 +55,6 @@ SIDEBAR_ITEMS = [
     ("Phone_Number.html", "Phone Number"),
     ("Faces.html", "Faces"),
     ("Geolocation.html", "Geolocation"),
-    ("Email_Osint_Workflow.html", "Email Osint Workflow"),
-    ("Name_OSINT_Workflow.html", "Name OSINT Workflow"),
-    ("Username_OSINT_Flowchart.html", "Username OSINT Flowchart"),
-    ("Domain_OSINT_Flowchart.html", "Domain OSINT Flowchart"),
-    ("Phone_OSINT_Workflow.html", "Phone OSINT Workflow"),
-    ("Location_Osint_Workfllow.html", "Location Osint Workfllow"),
     ("Search_Engines.html", "Search Engines"),
 ]
 
