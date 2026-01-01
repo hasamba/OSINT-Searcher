@@ -145,9 +145,15 @@ def process_file(filename):
     <script>
         function openAllStartMe() {{
             const urls = {js_urls};
-            urls.forEach(url => {{
-                window.open(url, '_blank');
-            }});
+            let i = 0;
+            function openNext() {{
+                if (i < urls.length) {{
+                    window.open(urls[i], '_blank');
+                    i++;
+                    setTimeout(openNext, 250); // Small delay to prevent browser blocking
+                }}
+            }}
+            openNext();
         }}
     </script>
             """
