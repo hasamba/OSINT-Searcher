@@ -54,7 +54,7 @@
             <li><a href="Malware_Related.html">Malware Related</a></li>
             <li><a href="Sandbox.html">Sandbox</a></li>
             <li><a href="Dorks_Cheatsheets.html">Dorks Cheatsheets</a></li>
-            <li><a href="Shodan.html">Shodan</a></li>
+            <li><a href="ASM.html">ASM</a></li>
             <li><a href="URLIP_Scan.html">URL/IP Scan</a></li>
             <li><a href="Social_Search.html">Social Search</a></li>
             <li><a href="Courses.html">Courses</a></li>
@@ -365,6 +365,22 @@
             urls.forEach(url => {
                 window.open(url, '_blank');
             });
+        }
+    </script>
+            
+
+    <script>
+        function openAllStartMe() {
+            const urls = ["https://osint-tool.com/", "https://intelx.io/tools?tab=domain", "https://web-check.as93.net/", "https://builtwith.com/", "https://centralops.net/co/", "https://dnslytics.com/reverse-ip", "https://spyonweb.com/", "https://visualping.io/", "https://viewdns.info/", "https://urldna.io/", "https://pentest-tools.com/information-gathering/find-subdomains-of-domain", "https://crt.sh/", "https://web.archive.org/", "https://www.virustotal.com/gui/home/upload", "https://www.shodan.io/", "http://moonsearch.com/", "https://www.criminalip.io/", "https://threatcrowd.org/", "https://leakix.net/", "https://fullhunt.io/", "https://www.cyber-xray.com/#/search", "https://falcon.crowdstrike.com/intelligence-v2/recon", "https://whois.domaintools.com/", "https://mxtoolbox.com/", "https://who.is/", "https://dehashed.com/", "https://app.netlas.io/host/", "https://leakcheck.io/", "https://app.binaryedge.io/services/query", "https://pulsedive.com/", "https://search.censys.io/", "https://en.fofa.info/", "https://dnsdumpster.com/", "https://osint.sh/"];
+            let i = 0;
+            function openNext() {
+                if (i < urls.length) {
+                    window.open(urls[i], '_blank');
+                    i++;
+                    setTimeout(openNext, 250); // Small delay to prevent browser blocking
+                }
+            }
+            openNext();
         }
     </script>
             

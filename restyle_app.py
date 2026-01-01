@@ -38,7 +38,7 @@ SIDEBAR_ITEMS = [
     ("Malware_Related.html", "Malware Related"),
     ("Sandbox.html", "Sandbox"),
     ("Dorks_Cheatsheets.html", "Dorks Cheatsheets"),
-    ("Shodan.html", "Shodan"),
+    ("ASM.html", "ASM"),
     ("URLIP_Scan.html", "URL/IP Scan"),
     ("Social_Search.html", "Social Search"),
     ("Courses.html", "Courses"),

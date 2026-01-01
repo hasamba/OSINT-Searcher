@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shodan</title>
+    <title>ASM</title>
     <link rel="stylesheet" href="Files/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -56,7 +56,7 @@
             <li><a href="Malware_Related.html">Malware Related</a></li>
             <li><a href="Sandbox.html">Sandbox</a></li>
             <li><a href="Dorks_Cheatsheets.html">Dorks Cheatsheets</a></li>
-            <li><a href="Shodan.html" class="active">Shodan</a></li>
+            <li><a href="ASM.html" class="active">ASM</a></li>
             <li><a href="URLIP_Scan.html">URL/IP Scan</a></li>
             <li><a href="Social_Search.html">Social Search</a></li>
             <li><a href="Courses.html">Courses</a></li>
@@ -78,8 +78,10 @@
         <!-- Main Content -->
         <main class="main-content">
             <div class="main-header">
-                <h1>Shodan</h1>
+                <h1>ASM</h1>
             </div>
+
+            <h2 style="margin: 20px 0 10px;">Shodan</h2>
             <div class="tools-grid">
 
                 <div class="tool-card">
@@ -163,6 +165,72 @@
                 </div>
 
             </div>
+
+            <h2 style="margin: 30px 0 10px; border-top: 1px solid var(--border-color); padding-top: 20px;">Netlas</h2>
+            <div class="tools-grid">
+
+                <div class="tool-card">
+                    <script type="text/javascript">
+                        function doNetlasPort(val) { window.open('https://app.netlas.io/responses/?q=port%3A' + val, '_blank'); }
+                    </script>
+                    <form class="tool-form" onsubmit="doNetlasPort(this.q.value); return false;">
+                        <input type="text" name="q" placeholder="Port (e.g. 443)" />
+                        <input type="submit" value="Netlas Port Search" />
+                    </form>
+                </div>
+
+                <div class="tool-card">
+                    <script type="text/javascript">
+                        function doNetlasHost(val) { window.open('https://app.netlas.io/responses/?q=host%3A' + val, '_blank'); }
+                    </script>
+                    <form class="tool-form" onsubmit="doNetlasHost(this.q.value); return false;">
+                        <input type="text" name="q" placeholder="Host (e.g. example.com)" />
+                        <input type="submit" value="Netlas Host Search" />
+                    </form>
+                </div>
+
+                <div class="tool-card">
+                    <script type="text/javascript">
+                        function doNetlasIP(val) { window.open('https://app.netlas.io/responses/?q=ip%3A' + val, '_blank'); }
+                    </script>
+                    <form class="tool-form" onsubmit="doNetlasIP(this.q.value); return false;">
+                        <input type="text" name="q" placeholder="IP Address" />
+                        <input type="submit" value="Netlas IP Search" />
+                    </form>
+                </div>
+
+                <div class="tool-card">
+                    <script type="text/javascript">
+                        function doNetlasTag(val) { window.open('https://app.netlas.io/responses/?q=tag.name%3A' + val, '_blank'); }
+                    </script>
+                    <form class="tool-form" onsubmit="doNetlasTag(this.q.value); return false;">
+                        <input type="text" name="q" placeholder="Tag Name (e.g. cisco)" />
+                        <input type="submit" value="Netlas Tag Search" />
+                    </form>
+                </div>
+
+                <div class="tool-card">
+                    <script type="text/javascript">
+                        function doNetlasCVE(val) { window.open('https://app.netlas.io/responses/?q=cve.name%3A' + val, '_blank'); }
+                    </script>
+                    <form class="tool-form" onsubmit="doNetlasCVE(this.q.value); return false;">
+                        <input type="text" name="q" placeholder="CVE Name (e.g. CVE-2019-16759)" />
+                        <input type="submit" value="Netlas CVE Search" />
+                    </form>
+                </div>
+
+                <div class="tool-card">
+                    <script type="text/javascript">
+                        function doNetlasTitle(val) { window.open('https://app.netlas.io/responses/?q=http.title%3A' + val, '_blank'); }
+                    </script>
+                    <form class="tool-form" onsubmit="doNetlasTitle(this.q.value); return false;">
+                        <input type="text" name="q" placeholder="HTTP Title" />
+                        <input type="submit" value="Netlas HTTP Title Search" />
+                    </form>
+                </div>
+
+            </div>
+
         </main>
     </div>
 
