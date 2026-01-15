@@ -54,7 +54,7 @@ SIDEBAR_ITEMS = [
     ("Geolocation.html", "Geolocation"),
     ("Detection_Rules.html", "Detection Rules"),
     ("Dorks_Cheatsheets.html", "Dorks Cheatsheets"),
-    ("Courses.html", "Courses"),
+    ("Courses.html", "Courses-Open Directories"),
 ]
 
 
@@ -224,8 +224,8 @@ def process_file(filename):
         # --- Clean up previous injections ---
         if 'class="btn-open-all"' in new_content:
              new_content = re.sub(r'<button.*?class="btn-open-all".*?</button>', '', new_content)
-        if 'function openAllStartMe' in new_content:
-             new_content = re.sub(r'<script>\s*function openAllStartMe.*?<\/script>', '', new_content, flags=re.DOTALL)
+        if 'function openAllTools' in new_content:
+             new_content = re.sub(r'<script>\s*function openAllTools.*?<\/script>', '', new_content, flags=re.DOTALL)
 
 
         # --- Injection ---
